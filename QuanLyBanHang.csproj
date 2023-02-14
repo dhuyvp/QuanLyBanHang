@@ -51,6 +51,7 @@
     <Compile Include="Controllers\HoaDonChiTietCtrl.cs" />
     <Compile Include="Controllers\HoaDonCtrl.cs" />
     <Compile Include="Controllers\KhachHangCtrl.cs" />
+    <Compile Include="Controllers\KhoHangCtrl.cs" />
     <Compile Include="Controllers\MuaHangCtrl.cs" />
     <Compile Include="Controllers\NhanVienCtrl.cs" />
     <Compile Include="Models\connection.cs" />
@@ -58,9 +59,11 @@
     <Compile Include="Models\HoaDonChiTietModel.cs" />
     <Compile Include="Models\HoaDonModel.cs" />
     <Compile Include="Models\KhachHangModel.cs" />
+    <Compile Include="Models\KhoHangModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\MuaHangModel.cs" />
     <Compile Include="Models\NhanVienModel.cs" />
+    <Compile Include="Models\ThongKeKhachHangModel.cs" />
     <Compile Include="Views\formDangKyKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,11 +138,17 @@
     <Compile Include="Views\uctMuaHang.Designer.cs">
       <DependentUpon>uctMuaHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\uctQuanLyKhoHang.cs">
+    <Compile Include="Views\uctQuanLyKho.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\uctQuanLyKhoHang.Designer.cs">
-      <DependentUpon>uctQuanLyKhoHang.cs</DependentUpon>
+    <Compile Include="Views\uctQuanLyKho.Designer.cs">
+      <DependentUpon>uctQuanLyKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\uctQuanLyHangHoa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\uctQuanLyHangHoa.Designer.cs">
+      <DependentUpon>uctQuanLyHangHoa.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\uctQuanLyNhanVien.cs">
       <SubType>UserControl</SubType>
@@ -152,6 +161,12 @@
     </Compile>
     <Compile Include="Views\uctThayDoiThongTin.Designer.cs">
       <DependentUpon>uctThayDoiThongTin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\uctThongKeKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\uctThongKeKhachHang.Designer.cs">
+      <DependentUpon>uctThongKeKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\uctXemHoaDon.cs">
       <SubType>UserControl</SubType>
@@ -204,14 +219,20 @@
     <EmbeddedResource Include="Views\uctMuaHang.resx">
       <DependentUpon>uctMuaHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\uctQuanLyKhoHang.resx">
-      <DependentUpon>uctQuanLyKhoHang.cs</DependentUpon>
+    <EmbeddedResource Include="Views\uctQuanLyKho.resx">
+      <DependentUpon>uctQuanLyKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\uctQuanLyHangHoa.resx">
+      <DependentUpon>uctQuanLyHangHoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\uctQuanLyNhanVien.resx">
       <DependentUpon>uctQuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\uctThayDoiThongTin.resx">
       <DependentUpon>uctThayDoiThongTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\uctThongKeKhachHang.resx">
+      <DependentUpon>uctThongKeKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\uctXemHoaDon.resx">
       <DependentUpon>uctXemHoaDon.cs</DependentUpon>

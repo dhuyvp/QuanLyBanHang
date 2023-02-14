@@ -16,7 +16,6 @@ namespace QuanLyBanHang.Views
         {
             InitializeComponent();
         }
-        private int cur_IDKho = 0;
         public static uctMuaHang _uctMua = new uctMuaHang();
         public List<string> dsIDHangMua = new List<string> ();
         void HienThiDSHangHoa()
@@ -37,7 +36,6 @@ namespace QuanLyBanHang.Views
             dgvDanhSachHangDeMua.Columns[1].HeaderText = "Kho quản lý";
             dgvDanhSachHangDeMua.Columns[2].HeaderText = "Mã hàng hóa";
             dgvDanhSachHangDeMua.Columns[3].HeaderText = "Tên hàng hóa";
-            dgvDanhSachHangDeMua.Columns[3].Width = 200;
             dgvDanhSachHangDeMua.Columns[4].HeaderText = "Giá tiền";
             dgvDanhSachHangDeMua.Columns[5].HeaderText = "Ngày sản xuất";
             dgvDanhSachHangDeMua.Columns[6].HeaderText = "Hạn sử dụng";

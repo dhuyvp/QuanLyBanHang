@@ -23,6 +23,11 @@ namespace QuanLyBanHang.Models
         {
             IDHangHoa = iDHangHoa;        
         }
+        public HangHoaModel(string iDHangHoa, int iKhoQuanLy)
+        {
+            IDHangHoa = iDHangHoa;
+            IDKhoQuanLy= iKhoQuanLy;
+        }
         public HangHoaModel(string iDHangHoa, int iDKhoQuanLy, string maHangHoa, string tenHangHoa, int giaTien, DateTime ngaySanXuat, DateTime hanSD, int iSBan)
         {
             IDHangHoa = iDHangHoa;
@@ -63,8 +68,8 @@ namespace QuanLyBanHang.Models
         public int DeleteHangHoaByID() 
         {
             int ketQua = 0;
-            string[] pars = new string[] { "@id_HangHoa" };
-            object[] values = new object[] { IDHangHoa };
+            string[] pars = new string[] { "@id_HangHoa", "@id_KhoQuanLy" };
+            object[] values = new object[] { IDHangHoa, IDKhoQuanLy };
 
             ketQua = Models.connection.Excute_sql("spDeleteHangHoa", CommandType.StoredProcedure, pars, values);
             return ketQua;

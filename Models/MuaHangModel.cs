@@ -43,7 +43,7 @@ namespace QuanLyBanHang.Models
         }
         public static DataSet FillDataSetDSIDKho()
         {
-            return Models.connection.FillDataSet("select id_KhoQuanLy from KhoHang", CommandType.Text);
+            return Models.connection.FillDataSet("select id_KhoQuanLy from KhoHang where HoatDong=1", CommandType.Text);
         }
     }
 }

@@ -34,7 +34,11 @@ namespace QuanLyBanHang.Models
         {
             IDNhanVien = _idNhanVien;
         }
-
+        public NhanVienModel(string _idNhanVien, int _idKhoQuanLy)
+        {
+            IDNhanVien = _idNhanVien;
+            IDKhoQuanLy = _idKhoQuanLy;
+        }
         public static DataSet FillDataSetDSNhanVien()
         {
             return Models.connection.FillDataSet("spGetDSNhanVien", CommandType.StoredProcedure);
@@ -65,8 +69,8 @@ namespace QuanLyBanHang.Models
         public int DeleteNhanVien()
         {
             int i = 0;
-            string[] paras = new string[] { "@id_NhanVien" };
-            object[] values = new object[] { IDNhanVien };
+            string[] paras = new string[] { "@id_NhanVien", "@id_KhoQuanLy" };
+            object[] values = new object[] { IDNhanVien, IDKhoQuanLy };
             i = Models.connection.Excute_sql("spDeleteNhanVien", CommandType.StoredProcedure, paras, values);
 
             int j = DeleteTaiKhoan();

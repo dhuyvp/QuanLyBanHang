@@ -31,10 +31,12 @@ D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.formMainKhachHa
 D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.uctMuaHang.resources
 D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.uctGioHang.resources
 D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.formMainNhanVien.resources
-D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.uctQuanLyKhoHang.resources
 D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.formMainAdmin.resources
 D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.uctQuanLyNhanVien.resources
 D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.uctXemHoaDon.resources
 D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.uctThayDoiThongTin.resources
 D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.uctDoiMatKhau.resources
 D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.formQuenMatKhau.resources
+D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.uctQuanLyKho.resources
+D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.uctQuanLyHangHoa.resources
+D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.uctThongKeKhachHang.resources

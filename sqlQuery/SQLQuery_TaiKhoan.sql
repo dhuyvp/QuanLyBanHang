@@ -16,7 +16,7 @@ create procedure spInsertTaiKhoan
 as
 begin
 	insert into TaiKhoan(tk_Username, tk_Password, is_Admin, is_NhanVien, is_KhachHang, id_KhoQuanLy)
-	values(@tk_Username, @tk_Password, @is_Admin, @is_NhanVien, @is_KhachHang, @id_KhoQuanLy)
+	values(@tk_Username, @tk_Password, @is_Admin, @is_NhanVien, @is_KhachHang, @id_KhoQuanLy);
 end
 GO
 
@@ -46,7 +46,7 @@ create procedure spDeleteTaiKhoan
 	@tk_Username nvarchar(100)
 as
 begin
-	delete from TaiKhoan where tk_Username = @tk_Username
+	delete from TaiKhoan where tk_Username = @tk_Username;
 end
 
 select * from TaiKhoan

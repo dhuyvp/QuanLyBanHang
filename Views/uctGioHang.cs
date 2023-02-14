@@ -40,7 +40,6 @@ namespace QuanLyBanHang.Views
             dgvGioHang.Columns[1].HeaderText = "Kho quản lý";
             dgvGioHang.Columns[2].HeaderText = "Mã hàng hóa";
             dgvGioHang.Columns[3].HeaderText = "Tên hàng hóa";
-            dgvGioHang.Columns[3].Width = 200;
             dgvGioHang.Columns[4].HeaderText = "Giá tiền";
             dgvGioHang.Columns[5].HeaderText = "Ngày sản xuất";
             dgvGioHang.Columns[6].HeaderText = "Hạn sử dụng";
@@ -49,16 +48,16 @@ namespace QuanLyBanHang.Views
         {
             string[] pars = new string[] { "@id_KhoQuanLy", "@TaiChinh" };
             object[] values = new object[] { idKhoHang, taiChinh };
-            int i = Models.connection.Excute_sql("spUpdateKhoHang", CommandType.StoredProcedure, pars, values);
+            int i = Models.connection.Excute_sql("spUpdateTaiChinhKhoHang", CommandType.StoredProcedure, pars, values);
         }
         void InsertHoaDonChiTiet(string maHoaDon, List<string> list)
         {
-            string idGiaoDich = Models.connection.ExcuteScalar("select dbo.funGetNextIDHoaDonChiTiet()");
             string idHangHoa = "";
             foreach(string str in list)
             {
                 if (str != "")
                 {
+                    string idGiaoDich = Models.connection.ExcuteScalar("select dbo.funGetNextIDHoaDonChiTiet()");
                     idHangHoa = str;
                     int i = Controllers.HoaDonChiTietCtrl.InsertHoaDonChiTiet(idGiaoDich, idHangHoa, maHoaDon);
                     int j = Controllers.HangHoaCtrl.UpdateDaBanHangHoa(idHangHoa);

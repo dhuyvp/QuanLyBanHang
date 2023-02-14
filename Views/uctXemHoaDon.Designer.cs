@@ -98,6 +98,7 @@
             // 
             // dgvDanhSachHangTrongHoaDon
             // 
+            this.dgvDanhSachHangTrongHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachHangTrongHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachHangTrongHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSachHangTrongHoaDon.Location = new System.Drawing.Point(3, 23);

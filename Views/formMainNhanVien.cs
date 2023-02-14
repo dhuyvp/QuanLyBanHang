@@ -57,8 +57,8 @@ namespace QuanLyBanHang.Views
 
         private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ThemTabPages(Views.uctQuanLyKhoHang._uctQLyNhanVien, 4, "Quản lý kho hàng");
-            Views.uctQuanLyKhoHang._uctQLyNhanVien.uctQuanLyNhanVien_Load(sender, e);
+            ThemTabPages(Views.uctQuanLyHangHoa._uctQLyHangHoa, 4, "Quản lý kho hàng");
+            Views.uctQuanLyHangHoa._uctQLyHangHoa.uctQuanHangHoa_Load(sender, e);
         }
 
         private void đóngTabHiệnTạiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,6 +85,11 @@ namespace QuanLyBanHang.Views
             {
                 return;
             }
+        }
+
+        private void thoátToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ThemTabPages(Views.uctThongKeKhachHang._uctThongKe, 4, "Thống kê khách hàng");
         }
     }
 }

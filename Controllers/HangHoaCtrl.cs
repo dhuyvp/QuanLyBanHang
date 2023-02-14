@@ -19,9 +19,9 @@ namespace QuanLyBanHang.Controllers
             Models.HangHoaModel _hangHoaModel = new Models.HangHoaModel(iDHangHoa, iDKhoQuanLy, maHangHoa, tenHangHoa, giaTien, ngaySanXuat, hanSD, isBan);
             return _hangHoaModel.UpdateHangHoaByID();
         }
-        public static int DeleteHangHoaByID(string idHangHoa)
+        public static int DeleteHangHoaByID(string idHangHoa, int idKho)
         {
-            Models.HangHoaModel _hangHoaModel = new Models.HangHoaModel(idHangHoa);
+            Models.HangHoaModel _hangHoaModel = new Models.HangHoaModel(idHangHoa, idKho);
             return _hangHoaModel.DeleteHangHoaByID();
         }
         public static int UpdateDaBanHangHoa(string idHangHoa)

@@ -28,11 +28,11 @@ namespace QuanLyBanHang.Controllers
             catch { return 0; }
         }
 
-        public static int DeleteNhanVien(string _IdNhanVien)
+        public static int DeleteNhanVien(string _IdNhanVien, int idKho)
         {
             try
             {
-                Models.NhanVienModel _nhanvien = new Models.NhanVienModel(_IdNhanVien);
+                Models.NhanVienModel _nhanvien = new Models.NhanVienModel(_IdNhanVien, idKho);
                 return _nhanvien.DeleteNhanVien();
             }
             catch { return 0; }

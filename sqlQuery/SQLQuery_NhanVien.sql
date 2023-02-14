@@ -17,10 +17,13 @@ GO
 
 /* Xoa Nhan Vien */
 create procedure spDeleteNhanVien
-	@id_NhanVien nvarchar(10)
+	@id_NhanVien nvarchar(10),
+	@id_KhoQuanLy int 
 as 
 begin
-	delete from NhanVien where id_NhanVien=@id_NhanVien
+	delete from NhanVien where id_NhanVien=@id_NhanVien;
+
+	exec spSoNVTrongKhoHang @id_Kho=@id_KhoQuanLy, @val = -1;
 end
 GO
 
@@ -37,7 +40,9 @@ create procedure spInsertNhanVien
 as
 begin
 	insert into NhanVien(id_NhanVien, id_KhoQuanLy, HoTen, GioiTinh, NgaySinh, DienThoai, Email, DiaChi)
-	values(@id_NhanVien, @id_KhoQuanLy, @HoTen, @GioiTinh, @NgaySinh, @DienThoai, @Email, @DiaChi)
+	values(@id_NhanVien, @id_KhoQuanLy, @HoTen, @GioiTinh, @NgaySinh, @DienThoai, @Email, @DiaChi);
+
+	exec spSoNVTrongKhoHang @id_Kho=@id_KhoQuanLy, @val = 1;
 end
 GO
 

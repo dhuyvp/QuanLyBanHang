@@ -85,5 +85,10 @@ namespace QuanLyBanHang.Views
                 return;
             }
         }
+
+        private void thoátToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ThemTabPages(Views.uctQuanLyKho._uctQLyKho, 4, "Quản lý kho");
+        }
     }
 }

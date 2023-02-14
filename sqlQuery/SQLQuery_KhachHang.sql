@@ -10,7 +10,11 @@ GO
 create procedure spGetDSKhachHang
 as
 begin
-	select * from KhachHang
+	select KhachHang.id_KhachHang, KhachHang.HoTen, KhachHang.GioiTinh, KhachHang.NgaySinh, KhachHang.DienThoai, KhachHang.Email, KhachHang.DiaChi, ThongKe.TongTien
+	from KhachHang 
+	inner join ThongKe
+	on KhachHang.id_KhachHang = ThongKe.id_KhachHang
+	order by ThongKe.TongTien desc
 end
 GO
 
@@ -22,6 +26,8 @@ begin
 	delete from KhachHang where id_KhachHang=@id_KhachHang;
 
 	delete from TaiKhoan where tk_Username = @id_KhachHang;
+
+	delete from ThongKe where id_KhachHang = @id_KhachHang;
 end
 GO
 
@@ -42,6 +48,10 @@ begin
 	
 	insert into TaiKhoan(tk_Username, tk_Password, is_Admin, is_NhanVien, is_KhachHang, id_KhoQuanLy)
 	values(@id_KhachHang, @MatKhau, 0, 0, 1, 0);
+
+	declare @id_ThongKe nvarchar(100) = (select dbo.funGetNextIDThongKe());
+	insert into ThongKe(id_ThongKe, id_KhachHang, TongTien)
+	values (@id_ThongKe, @id_KhachHang, 0);
 end
 GO
 

@@ -63,7 +63,8 @@
             // 
             this.dtpNgaySinh.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.dtpNgaySinh.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(116, 112);
             this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
@@ -197,6 +198,7 @@
             // dgvDSNhanVien
             // 
             this.dgvDSNhanVien.AllowUserToAddRows = false;
+            this.dgvDSNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSNhanVien.Location = new System.Drawing.Point(3, 22);

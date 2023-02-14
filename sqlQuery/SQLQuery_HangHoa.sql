@@ -41,7 +41,9 @@ create procedure spInsertHangHoa
 as
 begin
 	insert into HangHoa(id_HangHoa, id_KhoQuanLy, MaHangHoa, TenHangHoa, GiaTien, NgaySanXuat, HanSD, is_Ban)
-	values(@id_HangHoa, @id_KhoQuanLy, @MaHangHoa, @TenHangHoa, @GiaTien, @NgaySanXuat, @HanSD, @is_Ban)
+	values(@id_HangHoa, @id_KhoQuanLy, @MaHangHoa, @TenHangHoa, @GiaTien, @NgaySanXuat, @HanSD, @is_Ban);
+
+	exec spSoHangHoaTrongKhoHang @id_Kho=@id_KhoQuanLy, @val = 1;
 end
 GO
 
@@ -58,7 +60,6 @@ create procedure spUpdateHangHoa
 as
 begin
 	update HangHoa set
-		id_HangHoa=@id_HangHoa, 
 		id_KhoQuanLy=@id_KhoQuanLy,
 		MaHangHoa=@MaHangHoa,
 		TenHangHoa=@TenHangHoa,
@@ -73,11 +74,15 @@ GO
 
 /* Xoa hang hoa */
 create procedure spDeleteHangHoa
-	@id_HangHoa nvarchar(100)
+	@id_HangHoa nvarchar(100),
+	@id_KhoQuanLy int
 as
 begin
-	delete from HangHoa
-	where id_HangHoa = @id_HangHoa
+	update HangHoa set
+		is_Ban = 1
+	where id_HangHoa = @id_HangHoa;
+
+	exec spSoHangHoaTrongKhoHang @id_Kho=@id_KhoQuanLy, @val = -1;
 	
 end
 GO
@@ -91,5 +96,5 @@ begin
 		is_Ban = 1
 	where id_HangHoa = @id_HangHoa
 end
-
+GO
 

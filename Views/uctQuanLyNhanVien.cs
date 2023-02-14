@@ -19,8 +19,9 @@ namespace QuanLyBanHang.Views
             _uctQlyNhanVien = this;
         }
         int flag = 0;
-        private void uctQuanLyNhanVien_Load(object sender, EventArgs e)
+        public void uctQuanLyNhanVien_Load(object sender, EventArgs e)
         {
+            dgvDSNhanVien.ReadOnly = true;
             cmbIDKho.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbGioiTinh.DropDownStyle = ComboBoxStyle.DropDownList;
             HienThiDSNhanVien();
@@ -50,13 +51,11 @@ namespace QuanLyBanHang.Views
             dgvDSNhanVien.Columns[0].HeaderText = "ID nhân viên";
             dgvDSNhanVien.Columns[1].HeaderText = "Kho quản lý";
             dgvDSNhanVien.Columns[2].HeaderText = "Họ tên";
-            dgvDSNhanVien.Columns[2].Width = 150;
             dgvDSNhanVien.Columns[3].HeaderText = "Giới tính";
             dgvDSNhanVien.Columns[4].HeaderText = "Ngày sinh";
             dgvDSNhanVien.Columns[5].HeaderText = "Điện thoại";
             dgvDSNhanVien.Columns[6].HeaderText = "Email";
             dgvDSNhanVien.Columns[7].HeaderText = "Địa chỉ";
-            dgvDSNhanVien.Columns[7].Width = 200;
         }
 
         void DataBinding()
@@ -107,10 +106,12 @@ namespace QuanLyBanHang.Views
         void clearData()
         {
             txtIdNhanVien.Text = Models.connection.ExcuteScalar("select dbo.funGetNextIDNhanVien()");
+            cmbIDKho.Text = "";
             txtHoTen.Text = "";
             txtDienThoai.Text = "";
             txtEmail.Text = "";
             txtDiaChi.Text = "";
+            cmbGioiTinh.Text = "";
             loadcontrol();
         }
 
@@ -130,12 +131,13 @@ namespace QuanLyBanHang.Views
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string _idNhanVien = txtIdNhanVien.Text;
+            int _idKho = int.Parse(cmbIDKho.Text);
             MessageBox.Show(_idNhanVien);
             DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
                 int i = 0;
-                i = Controllers.NhanVienCtrl.DeleteNhanVien(_idNhanVien);
+                i = Controllers.NhanVienCtrl.DeleteNhanVien(_idNhanVien, _idKho);
                 if (i > 0)
                 {
                     MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -154,18 +156,8 @@ namespace QuanLyBanHang.Views
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            string _idNhanVien = "";
-            try
-            {
-                _idNhanVien = txtIdNhanVien.Text;
-            }
-            catch { }
-            string _hoTen = "";
-            try
-            {
-                _hoTen = txtHoTen.Text;
-            }
-            catch { }
+            string _idNhanVien = txtIdNhanVien.Text;
+            string _hoTen = txtHoTen.Text;
             int _idKho = 0;
             try
             {
@@ -173,49 +165,27 @@ namespace QuanLyBanHang.Views
             }
             catch { }
             DateTime _ngaySinh = dtpNgaySinh.Value;
-            string _gioiTinh = "";
-            try
+            string _gioiTinh = cmbGioiTinh.Text;
+            string _dienThoai = txtDienThoai.Text;
+            string _email = txtEmail.Text;
+            string _diaChi = txtDiaChi.Text;
+            if (_idNhanVien == "" || _idKho <= 0 || _hoTen == "" || _gioiTinh == "" || _dienThoai == "" || _email == "" || _diaChi == "")
             {
-                _gioiTinh = cmbGioiTinh.Text;
+                MessageBox.Show("Vui lòng nhập đúng và đầy đủ thông tin!");
+                return;
             }
-            catch { }
-            string _dienThoai = "";
-            try
-            {
-                _dienThoai = txtDienThoai.Text;
-            }
-            catch { }
-            string _email = "";
-            try
-            {
-                _email = txtEmail.Text;
-            }
-            catch { }
-            string _diaChi = "";
-            try
-            {
-                _diaChi = txtDiaChi.Text;
-            }
-            catch { }
 
             if (flag == 1)
             {
-                if (_idNhanVien == "" || _idKho <= 0 || _hoTen == "" || _gioiTinh == "" || _dienThoai == "" || _email == "" || _diaChi == "")
+                int i = 0;
+                i = Controllers.NhanVienCtrl.InsertNhanVien(_idNhanVien, _idKho, _hoTen, _gioiTinh, _ngaySinh, _dienThoai, _email, _diaChi);
+                if (i > 0)
                 {
-                    MessageBox.Show("Vui lòng nhập đúng và đầy đủ thông tin!");
+                    MessageBox.Show("Thêm nhân viên thành công!");
                 }
                 else
                 {
-                    int i = 0;
-                    i = Controllers.NhanVienCtrl.InsertNhanVien(_idNhanVien, _idKho, _hoTen, _gioiTinh, _ngaySinh, _dienThoai, _email, _diaChi);
-                    if (i > 0)
-                    {
-                        MessageBox.Show("Thêm nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thêm nhân viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("Thêm nhân viên không thành công!");
                 }
             }
             else
@@ -224,14 +194,15 @@ namespace QuanLyBanHang.Views
                 i = Controllers.NhanVienCtrl.UpdateNhanVien(_idNhanVien, _idKho, _hoTen, _gioiTinh, _ngaySinh, _dienThoai, _email, _diaChi);
                 if (i > 0)
                 {
-                    MessageBox.Show("Cập nhật thông tin nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cập nhật thông tin nhân viên thành công!");
                 }
                 else
                 {
-                    MessageBox.Show("Cập nhật thông tin nhân viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Cập nhật thông tin nhân viên không thành công!");
                 }
             }
             uctQuanLyNhanVien_Load(sender, e);
+            Views.uctQuanLyKho._uctQLyKho.uctQuanLyKho_Load(sender, e);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

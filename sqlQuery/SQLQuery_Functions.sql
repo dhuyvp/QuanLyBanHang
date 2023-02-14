@@ -1,3 +1,25 @@
+drop function checkTKKhachHang
+GO
+drop function checkAdmin
+GO
+drop function checkNhanVien
+GO
+drop function checkKhachHang
+GO
+drop function funGetNextIDNhanVien
+GO
+drop function funGetNextIDHangHoa
+GO
+drop function funGetNextIDHoaDon
+GO
+drop function funGetNextIDHoaDonChiTiet
+GO
+drop function funGetNextIDKhoHang
+GO
+drop function funGetNextIDThongKe
+GO
+
+/*-----------------------*/
 create function checkTKKhachHang
 (
 	@tk_Username nvarchar(100)
@@ -190,4 +212,62 @@ begin
 
 	return 'gd'+convert(nvarchar(10), @current_ID);
 end
+GO
+
+create function funGetNextIDKhoHang()
+returns int
+as
+begin
+	declare @current_ID int;
+	begin
+		if (select count(*) from KhoHang) = 0
+			SET @current_ID = 0;
+		else 
+		begin
+			declare @max_ID int;
+			select @max_ID = MAX(id_KhoQuanLy) from KhoHang;
+			SET @current_ID = @max_ID;
+		end
+	end
+	/* format */
+	SET @current_ID = @current_ID + 1;
+	
+
+	return @current_ID;
+end
+GO
+
+create function funGetNextIDThongKe()
+returns nvarchar(100)
+as
+begin
+	declare @current_ID nvarchar(100);
+	begin
+		if (select count(*) from ThongKe) = 0
+			SET @current_ID = '0';
+		else 
+		begin
+			declare @max_ID nvarchar(10);
+			select @max_ID = SUBSTRING(CONVERT(nvarchar(10), MAX(id_ThongKe)), 3, 10) from ThongKe;
+			SET @current_ID = CONVERT(nvarchar(10), @max_ID);
+		end
+	end
+	/* format */
+	SET @current_ID = @current_ID + 1;
+	if @current_ID = 100000000
+		SET @current_ID = 1;
+	SET @current_ID = CONVERT(nvarchar(10), @current_ID);
+	
+	declare @n_loop int = 8 - len(@current_ID);
+	while @n_loop > 0
+		begin 
+			SET @current_ID = '0' + @current_ID;
+			SET @n_loop = @n_loop - 1;
+		end
+
+	return 'hh'+convert(nvarchar(10), @current_ID);
+end
+GO
+
+select dbo.funGetNextIDThongKe()
 GO
