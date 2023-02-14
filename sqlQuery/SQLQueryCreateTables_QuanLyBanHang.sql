@@ -1,4 +1,8 @@
 ﻿/* Drop tat ca cac bang
+drop table ThongKe
+GO
+drop table TaiKhoan
+GO
 drop table HoaDonChiTiet
 GO
 drop table HoaDon
@@ -11,24 +15,7 @@ drop table KhoHang
 GO
 drop table KhachHang
 GO
-drop table TaiKhoan
-GO
 */
-
-/* Tao bang tai khoan */
-create table TaiKhoan
-(
-	tk_Username nvarchar(100) not null,
-	tk_Password nvarchar(100) not null,
-	is_Admin bit not null,
-	is_NhanVien bit not null,
-	is_KhachHang bit not null,
-	id_KhoQuanLy int not null,
-
-	primary key (tk_Username),
-	foreign key(id_KhoQuanLy) references KhoHang(id_KhoQuanLy),
-)
-GO
 
 /* Tao bang khach hang */
 create table KhachHang
@@ -51,28 +38,13 @@ create table KhoHang
 	id_KhoQuanLy int not null,
 	DiaChi nvarchar(100) not null,
 	TaiChinh int not null,
+	soNhanVien int not null,
+	soHangHoa int not null,
+	HoatDong bit not null,
 
 	primary key(id_KhoQuanLy),
 )
 GO
-
-
---insert into KhoHang(id_KhoQuanLy, DiaChi, TaiChinh)
---values(0, N'Kho hàng', 0)
---GO
---select *from KhoHang
---GO
-
---delete from HangHoa where id_HangHoa = 1
---GO
---delete from TaiKhoan where tk_Username = 'nv0001'
---GO
-
---insert into TaiKhoan(tk_Username, tk_Password, is_Admin, is_NhanVien, is_KhachHang, id_KhoQuanLy)
---values('nv001', 'test', 0, 0, 1, 0)
---GO
---select * from TaiKhoan
---GO
 
 /* Tao bang nhan vien */
 create table NhanVien
@@ -108,16 +80,6 @@ create table HangHoa
 )
 GO
 
-/* Tao bang thong tin giao dich hang hoa */
-create table ThongTinGiaoDich
-(
-	MaHoaDon nvarchar(100) not null,
-	GiaTien int not null,
-
-	primary key (MaHoaDon),
-)
-GO
-
 /* Tao bang hoa don ban/xuat */
 create table HoaDon
 (
@@ -145,4 +107,40 @@ create table HoaDonChiTiet
 	foreign key (MaHoaDon) references HoaDon(MaHoaDon),
 	foreign key (id_HangHoa) references HangHoa(id_HangHoa),
 )
+GO
+
+/* Tao bang tai khoan */
+create table TaiKhoan
+(
+	tk_Username nvarchar(100) not null,
+	tk_Password nvarchar(100) not null,
+	is_Admin bit not null,
+	is_NhanVien bit not null,
+	is_KhachHang bit not null,
+	id_KhoQuanLy int not null,
+
+	primary key (tk_Username),
+	foreign key(id_KhoQuanLy) references KhoHang(id_KhoQuanLy),
+)
+GO
+
+create table ThongKe
+(	
+	id_ThongKe nvarchar(100) not null,
+	id_KhachHang nvarchar(100) not null,
+	TongTien int not null,
+
+	primary key (id_ThongKe),
+	foreign key (id_KhachHang) references KhachHang(id_KhachHang),
+)
+GO
+
+insert into KhoHang(id_KhoQuanLy, DiaChi, TaiChinh, soNhanVien, soHangHoa, HoatDong)
+values(0, N'Việt Nam', 0, 0, 0, 0)
+GO
+insert into KhoHang(id_KhoQuanLy, DiaChi, TaiChinh, soNhanVien, soHangHoa, HoatDong)
+values(1, N'Hà Nội', 0, 0, 0, 1)
+GO
+insert into TaiKhoan(tk_Username, tk_Password, is_Admin, is_NhanVien, is_KhachHang, id_KhoQuanLy)
+values('admin', 'admin', 1, 0, 0, 0)
 GO
