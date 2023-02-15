@@ -6,15 +6,30 @@ drop procedure spInsertKhachHang
 GO
 drop procedure spUpdateKhachHang
 GO
+drop proc UpdateTongTien
+GO
+
+create procedure UpdateTongTien
+as
+begin
+	update ThongKe set
+		TongTien = (select sum(GiaTien) from HoaDon where ThongKe.id_KhachHang = HoaDon.id_KhachHang)
+	where (select count(*) from HoaDon where HoaDon.id_KhachHang = ThongKe.id_KhachHang) <> 0
+end
+GO
 
 create procedure spGetDSKhachHang
 as
 begin
+	update ThongKe set
+		TongTien = (select sum(GiaTien) from HoaDon where ThongKe.id_KhachHang = HoaDon.id_KhachHang)
+	where (select count(*) from HoaDon where HoaDon.id_KhachHang = ThongKe.id_KhachHang) <> 0;
+	
 	select KhachHang.id_KhachHang, KhachHang.HoTen, KhachHang.GioiTinh, KhachHang.NgaySinh, KhachHang.DienThoai, KhachHang.Email, KhachHang.DiaChi, ThongKe.TongTien
 	from KhachHang 
 	inner join ThongKe
 	on KhachHang.id_KhachHang = ThongKe.id_KhachHang
-	order by ThongKe.TongTien desc
+	order by ThongKe.TongTien desc;
 end
 GO
 

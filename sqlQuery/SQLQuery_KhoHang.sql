@@ -31,7 +31,8 @@ GO
 create procedure spGetDSKho
 as
 begin 
-	select * from KhoHang where id_KhoQuanLy <> 0 and HoatDong = 1; 
+	select id_KhoQuanLy, DiaChi, TaiChinh, soNhanVien, soHangHoa from KhoHang 
+	where id_KhoQuanLy <> 0 and HoatDong = 1; 
 end
 GO
 
