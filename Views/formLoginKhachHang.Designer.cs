@@ -36,86 +36,99 @@
             this.btnQuenMatKhau = new System.Windows.Forms.Button();
             this.btnTaoTaiKhoan = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 48);
+            this.label1.Location = new System.Drawing.Point(112, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 19);
+            this.label1.Size = new System.Drawing.Size(130, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 109);
+            this.label2.Location = new System.Drawing.Point(112, 150);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 19);
+            this.label2.Size = new System.Drawing.Size(88, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mật khẩu";
             // 
             // txtTenDangNhap
             // 
-            this.txtTenDangNhap.Location = new System.Drawing.Point(246, 44);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(284, 85);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(318, 27);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(318, 31);
             this.txtTenDangNhap.TabIndex = 1;
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(246, 101);
+            this.txtMatKhau.Location = new System.Drawing.Point(284, 142);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(318, 27);
-            this.txtMatKhau.TabIndex = 1;
+            this.txtMatKhau.PasswordChar = '*';
+            this.txtMatKhau.Size = new System.Drawing.Size(318, 31);
+            this.txtMatKhau.TabIndex = 2;
             // 
             // btnDangNhap
             // 
             this.btnDangNhap.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDangNhap.Location = new System.Drawing.Point(136, 199);
+            this.btnDangNhap.Location = new System.Drawing.Point(174, 240);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(365, 39);
-            this.btnDangNhap.TabIndex = 2;
+            this.btnDangNhap.TabIndex = 3;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = false;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // btnQuenMatKhau
             // 
-            this.btnQuenMatKhau.Location = new System.Drawing.Point(416, 146);
+            this.btnQuenMatKhau.Location = new System.Drawing.Point(454, 187);
             this.btnQuenMatKhau.Name = "btnQuenMatKhau";
             this.btnQuenMatKhau.Size = new System.Drawing.Size(148, 28);
-            this.btnQuenMatKhau.TabIndex = 2;
+            this.btnQuenMatKhau.TabIndex = 4;
             this.btnQuenMatKhau.Text = "Quên mật khẩu?";
             this.btnQuenMatKhau.UseVisualStyleBackColor = true;
             this.btnQuenMatKhau.Click += new System.EventHandler(this.btnQuenMatKhau_Click);
             // 
             // btnTaoTaiKhoan
             // 
-            this.btnTaoTaiKhoan.Location = new System.Drawing.Point(136, 255);
+            this.btnTaoTaiKhoan.Location = new System.Drawing.Point(174, 296);
             this.btnTaoTaiKhoan.Name = "btnTaoTaiKhoan";
             this.btnTaoTaiKhoan.Size = new System.Drawing.Size(365, 39);
-            this.btnTaoTaiKhoan.TabIndex = 2;
+            this.btnTaoTaiKhoan.TabIndex = 4;
             this.btnTaoTaiKhoan.Text = "Tạo tài khoản mới";
             this.btnTaoTaiKhoan.UseVisualStyleBackColor = true;
             this.btnTaoTaiKhoan.Click += new System.EventHandler(this.btnTaoTaiKhoan_Click);
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(539, 263);
+            this.btnThoat.Location = new System.Drawing.Point(571, 296);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 31);
-            this.btnThoat.TabIndex = 3;
+            this.btnThoat.Size = new System.Drawing.Size(78, 39);
+            this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(267, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(306, 26);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Form đăng nhập khách hàng";
+            // 
             // formLoginKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 336);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::QuanLyBanHang.Properties.Resources.Customer_Login;
+            this.ClientSize = new System.Drawing.Size(706, 376);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnQuenMatKhau);
             this.Controls.Add(this.btnTaoTaiKhoan);
@@ -144,5 +157,6 @@
         private System.Windows.Forms.Button btnQuenMatKhau;
         private System.Windows.Forms.Button btnTaoTaiKhoan;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Label label3;
     }
 }

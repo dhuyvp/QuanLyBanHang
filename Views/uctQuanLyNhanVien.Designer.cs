@@ -63,13 +63,16 @@
             // 
             this.dtpNgaySinh.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.dtpNgaySinh.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dtpNgaySinh.CausesValidation = false;
             this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(116, 112);
             this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpNgaySinh.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(150, 27);
             this.dtpNgaySinh.TabIndex = 18;
+            this.dtpNgaySinh.Value = new System.DateTime(2023, 2, 15, 0, 0, 0, 0);
             // 
             // cmbGioiTinh
             // 
@@ -206,12 +209,12 @@
             this.dgvDSNhanVien.Name = "dgvDSNhanVien";
             this.dgvDSNhanVien.RowHeadersWidth = 62;
             this.dgvDSNhanVien.RowTemplate.Height = 28;
-            this.dgvDSNhanVien.Size = new System.Drawing.Size(1134, 401);
+            this.dgvDSNhanVien.Size = new System.Drawing.Size(1134, 277);
             this.dgvDSNhanVien.TabIndex = 0;
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(936, 208);
+            this.btnHuy.Location = new System.Drawing.Point(854, 211);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(93, 29);
@@ -222,7 +225,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(806, 208);
+            this.btnLuu.Location = new System.Drawing.Point(724, 211);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(93, 29);
@@ -233,7 +236,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(674, 208);
+            this.btnXoa.Location = new System.Drawing.Point(592, 211);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(93, 29);
@@ -244,7 +247,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(550, 208);
+            this.btnSua.Location = new System.Drawing.Point(468, 211);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(93, 29);
@@ -255,7 +258,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(432, 208);
+            this.btnThem.Location = new System.Drawing.Point(350, 211);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(93, 29);
@@ -268,7 +271,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(601, 267);
+            this.label2.Location = new System.Drawing.Point(542, 271);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(241, 23);
             this.label2.TabIndex = 23;
@@ -278,7 +281,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(631, 16);
+            this.label1.Location = new System.Drawing.Point(549, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 23);
             this.label1.TabIndex = 22;
@@ -287,11 +290,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvDSNhanVien);
-            this.groupBox1.Location = new System.Drawing.Point(185, 291);
+            this.groupBox1.Location = new System.Drawing.Point(69, 290);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1140, 425);
+            this.groupBox1.Size = new System.Drawing.Size(1140, 301);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             // 
@@ -313,7 +316,7 @@
             this.grQLNhanVien.Controls.Add(this.txtHoTen);
             this.grQLNhanVien.Controls.Add(this.label3);
             this.grQLNhanVien.Controls.Add(this.txtIdNhanVien);
-            this.grQLNhanVien.Location = new System.Drawing.Point(315, 39);
+            this.grQLNhanVien.Location = new System.Drawing.Point(213, 47);
             this.grQLNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grQLNhanVien.Name = "grQLNhanVien";
             this.grQLNhanVien.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -331,8 +334,8 @@
             // 
             // uctQuanLyNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::QuanLyBanHang.Properties.Resources.admin_background;
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnXoa);
@@ -357,8 +360,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.ComboBox cmbGioiTinh;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -384,5 +385,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox grQLNhanVien;
         private System.Windows.Forms.ComboBox cmbIDKho;
+        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
     }
 }

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
 
 namespace QuanLyBanHang.Controllers
 {
@@ -37,5 +40,35 @@ namespace QuanLyBanHang.Controllers
             }
             catch { return 0; }
         }
+
+        #region Methods to support Search Button
+        public static DataSet FillDataSet_SearchNhanVienByIdNhanVien(string _idNhanVien)
+        {
+            try
+            {
+                Models.NhanVienModel _nhanVien = new Models.NhanVienModel(_idNhanVien);
+                return _nhanVien.FillDataSet_SearchNhanVienByIdNhanVien();
+            }
+            catch { return null; }
+        }
+        public static DataSet FillDataSet_SearchNhanVienByHoTenNhanVien(string _hoTen)
+        {
+            try
+            {
+                Models.NhanVienModel _nhanVien = new Models.NhanVienModel(_hoTen);
+                return _nhanVien.FillDataSet_SearchNhanVienByHoTenNhanVien();
+            }
+            catch { return null; }
+        }
+        public static DataSet FillDataSet_SearchNhanVienByIdKho(int _idKho)
+        {
+            try
+            {
+                Models.NhanVienModel _nhanVien = new Models.NhanVienModel(_idKho);
+                return _nhanVien.FillDataSet_SearchNhanVienByIdKho();
+            }
+            catch { return null; }
+        }
+        #endregion
     }
 }

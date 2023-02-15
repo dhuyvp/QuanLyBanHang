@@ -30,9 +30,14 @@ namespace QuanLyBanHang.Models
             Email = _email;
             DiaChi = _diaChi;
         }
-        public NhanVienModel(string _idNhanVien)
+        public NhanVienModel(string _s)
         {
-            IDNhanVien = _idNhanVien;
+            this.IDNhanVien = _s;
+            this.HoTen = _s;
+        }
+        public NhanVienModel(int _idKho)
+        {
+            this.IDKhoQuanLy = _idKho;
         }
         public NhanVienModel(string _idNhanVien, int _idKhoQuanLy)
         {
@@ -100,6 +105,34 @@ namespace QuanLyBanHang.Models
             object[] values = new object[] { IDNhanVien };
             i = Models.connection.Excute_sql("spDeleteTaiKhoan", CommandType.StoredProcedure, pars, values);
             return i;
+        }
+
+        // Search Nhan Vien
+        // Support search button in QuanLyNV
+        public DataSet FillDataSet_SearchNhanVienByIdNhanVien()
+        {
+            DataSet ds = new DataSet();
+            string[] paras = new string[1] { "@id_NhanVien" };
+            object[] values = new object[1] { IDNhanVien };
+            ds = Models.connection.FillDataSet("spSearchByIdNV", CommandType.StoredProcedure, paras, values);
+            return ds;
+        }
+
+        public DataSet FillDataSet_SearchNhanVienByHoTenNhanVien()
+        {
+            DataSet ds = new DataSet();
+            string[] paras = new string[1] { "@HoTen" };
+            object[] values = new object[1] { HoTen };
+            ds = Models.connection.FillDataSet("spSearchNVByTenNV", CommandType.StoredProcedure, paras, values);
+            return ds;
+        }
+        public DataSet FillDataSet_SearchNhanVienByIdKho()
+        {
+            DataSet ds = new DataSet();
+            string[] paras = new string[1] { "@id_KhoQuanLy" };
+            object[] values = new object[1] { IDKhoQuanLy };
+            ds = Models.connection.FillDataSet("spSearchNVByIdKho", CommandType.StoredProcedure, paras, values);
+            return ds;
         }
     }
 }

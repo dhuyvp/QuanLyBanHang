@@ -66,8 +66,11 @@ namespace QuanLyBanHang.Views
                     int idKhoHang = int.Parse(dt.Rows[0][0].ToString() );
                     int giaTien = int.Parse(dt.Rows[0][1].ToString());
                     UpdateTaiChinhKhoHang(idKhoHang, giaTien);
+
+                    int _ = Models.connection.Excute_sql("exec spSoHangHoaTrongKhoHang @id_Kho=" + idKhoHang.ToString() + ", @val = -1");
                 }
             }
+            
         }
         
         void InsertHoaDon()
@@ -111,6 +114,7 @@ namespace QuanLyBanHang.Views
             {
                 InsertHoaDon();
                 uctGioHang_Load(sender, e);
+                Views.uctThongKeKhachHang._uctThongKe.uctThongKeKhachHang_Load(sender, e);
             } else
             {
                 return;
@@ -144,7 +148,7 @@ namespace QuanLyBanHang.Views
             {
                 MessageBox.Show("Vui lòng chọn hàng hóa mà bạn muốn xóa khỏi giỏ hàng!");
             }
-
+            Views.uctQuanLyKho._uctQLyKho.uctQuanLyKho_Load(sender, e);
         }
     }
 }

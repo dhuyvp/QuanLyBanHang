@@ -22,10 +22,5 @@ namespace QuanLyBanHang.Models
         {
             return Models.connection.FillDataSet("spGetDSKhachHang", CommandType.StoredProcedure);
         }
-        public static string GetTongChiPhi(string _idKhachHang)
-        {
-            DataTable dt = Models.connection.FillDataSet("select sum(GiaTien) from HoaDon where id_KhachHang ='" + _idKhachHang + "'", CommandType.Text).Tables[0];
-            return dt.Rows[0][0].ToString();
-        }
     }
 }

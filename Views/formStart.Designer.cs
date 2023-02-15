@@ -41,9 +41,9 @@ namespace QuanLyBanHang
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(238, 28);
+            this.label1.Location = new System.Drawing.Point(297, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 23);
+            this.label1.Size = new System.Drawing.Size(255, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Form truy cập hệ thống";
             // 
@@ -51,9 +51,9 @@ namespace QuanLyBanHang
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(78, 99);
+            this.label2.Location = new System.Drawing.Point(88, 124);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 19);
+            this.label2.Size = new System.Drawing.Size(168, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Vai trò của bạn là gì";
             // 
@@ -61,10 +61,10 @@ namespace QuanLyBanHang
             // 
             this.rBtn1.AutoSize = true;
             this.rBtn1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rBtn1.Location = new System.Drawing.Point(426, 98);
+            this.rBtn1.Location = new System.Drawing.Point(464, 122);
             this.rBtn1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rBtn1.Name = "rBtn1";
-            this.rBtn1.Size = new System.Drawing.Size(75, 23);
+            this.rBtn1.Size = new System.Drawing.Size(88, 26);
             this.rBtn1.TabIndex = 2;
             this.rBtn1.TabStop = true;
             this.rBtn1.Text = "Admin";
@@ -75,10 +75,10 @@ namespace QuanLyBanHang
             // 
             this.rBtn2.AutoSize = true;
             this.rBtn2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rBtn2.Location = new System.Drawing.Point(426, 136);
+            this.rBtn2.Location = new System.Drawing.Point(464, 170);
             this.rBtn2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rBtn2.Name = "rBtn2";
-            this.rBtn2.Size = new System.Drawing.Size(97, 23);
+            this.rBtn2.Size = new System.Drawing.Size(115, 26);
             this.rBtn2.TabIndex = 3;
             this.rBtn2.TabStop = true;
             this.rBtn2.Text = "Nhân viên";
@@ -86,10 +86,10 @@ namespace QuanLyBanHang
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(426, 227);
+            this.btnOK.Location = new System.Drawing.Point(464, 282);
             this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(102, 34);
+            this.btnOK.Size = new System.Drawing.Size(115, 42);
             this.btnOK.TabIndex = 4;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -99,10 +99,10 @@ namespace QuanLyBanHang
             // 
             this.rBtn3.AutoSize = true;
             this.rBtn3.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rBtn3.Location = new System.Drawing.Point(426, 174);
+            this.rBtn3.Location = new System.Drawing.Point(464, 209);
             this.rBtn3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rBtn3.Name = "rBtn3";
-            this.rBtn3.Size = new System.Drawing.Size(108, 23);
+            this.rBtn3.Size = new System.Drawing.Size(126, 26);
             this.rBtn3.TabIndex = 5;
             this.rBtn3.TabStop = true;
             this.rBtn3.Text = "Khách hàng";
@@ -110,9 +110,9 @@ namespace QuanLyBanHang
             // 
             // formStart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 360);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::QuanLyBanHang.Properties.Resources.form_start;
+            this.ClientSize = new System.Drawing.Size(844, 431);
             this.Controls.Add(this.rBtn3);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.rBtn2);

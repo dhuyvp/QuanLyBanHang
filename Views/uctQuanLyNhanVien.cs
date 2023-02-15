@@ -131,8 +131,15 @@ namespace QuanLyBanHang.Views
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string _idNhanVien = txtIdNhanVien.Text;
-            int _idKho = int.Parse(cmbIDKho.Text);
-            MessageBox.Show(_idNhanVien);
+            int _idKho = -1;
+            bool _b = int.TryParse(cmbIDKho.Text, out _idKho);
+            if (_b == false || _idKho <= 0)
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên mà bạn muốn xóa!");
+                uctQuanLyNhanVien_Load(sender, e);
+                return;
+            }
+
             DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
@@ -164,7 +171,10 @@ namespace QuanLyBanHang.Views
                 _idKho = Convert.ToInt32(cmbIDKho.Text);
             }
             catch { }
-            DateTime _ngaySinh = dtpNgaySinh.Value;
+            DateTime _ngaySinh = dtpNgaySinh.Value.Date;
+            MessageBox.Show(_ngaySinh.ToString());
+
+
             string _gioiTinh = cmbGioiTinh.Text;
             string _dienThoai = txtDienThoai.Text;
             string _email = txtEmail.Text;

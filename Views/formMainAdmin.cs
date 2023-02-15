@@ -90,5 +90,10 @@ namespace QuanLyBanHang.Views
         {
             ThemTabPages(Views.uctQuanLyKho._uctQLyKho, 4, "Quản lý kho");
         }
+
+        private void tìmKiếmThôngTinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(Views.uctSearchInforNV._uctSearchInfor, 4, "Tìm kiếm thông tin");
+        }
     }
 }

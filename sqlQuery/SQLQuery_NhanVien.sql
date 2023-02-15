@@ -7,6 +7,12 @@ drop proc spInsertNhanVien
 GO
 drop proc spUpdateNhanVien
 GO
+drop proc spSearchByIdNV
+GO
+drop proc spSearchNVByTenNV
+GO
+drop proc spSearchNVByIdKho
+GO
 
 create procedure spGetDSNhanVien
 as
@@ -70,3 +76,33 @@ begin
 	where id_NhanVien = @id_NhanVien
 end
 GO
+
+create procedure spSearchByIdNV
+(
+	@id_NhanVien	nvarchar(10)
+)
+as
+begin
+	select * from nhanvien where id_NhanVien = @id_NhanVien 
+end
+go
+
+create procedure spSearchNVByTenNV
+(
+	@HoTen	nvarchar(100)
+)
+as
+begin
+	select * from nhanvien where HoTen = @HoTen 
+end
+go
+
+create procedure spSearchNVByIdKho
+(
+	@id_KhoQuanLy	int
+)
+as
+begin
+	select * from nhanvien where id_KhoQuanLy = @id_KhoQuanLy
+end
+go

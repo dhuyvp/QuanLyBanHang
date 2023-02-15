@@ -29,7 +29,7 @@ namespace QuanLyBanHang.Views
             
         }
 
-        private void uctThongKeKhachHang_Load(object sender, EventArgs e)
+        public void uctThongKeKhachHang_Load(object sender, EventArgs e)
         {
             HienThiDSKhachHang();
         }

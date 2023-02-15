@@ -156,6 +156,12 @@
     <Compile Include="Views\uctQuanLyNhanVien.Designer.cs">
       <DependentUpon>uctQuanLyNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\uctSearchInfoNV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\uctSearchInfoNV.Designer.cs">
+      <DependentUpon>uctSearchInfoNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\uctThayDoiThongTin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -203,6 +209,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Views\formLoginAdmin.resx">
       <DependentUpon>formLoginAdmin.cs</DependentUpon>
@@ -228,6 +235,9 @@
     <EmbeddedResource Include="Views\uctQuanLyNhanVien.resx">
       <DependentUpon>uctQuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\uctSearchInfoNV.resx">
+      <DependentUpon>uctSearchInfoNV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\uctThayDoiThongTin.resx">
       <DependentUpon>uctThayDoiThongTin.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +260,29 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\form_start.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin_login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Employee_Login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer_Login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer_Registration.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NV_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background_customer.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

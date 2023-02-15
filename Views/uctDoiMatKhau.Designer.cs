@@ -52,14 +52,14 @@
             // 
             this.txtMatKhau2.Location = new System.Drawing.Point(614, 197);
             this.txtMatKhau2.Name = "txtMatKhau2";
-            this.txtMatKhau2.Size = new System.Drawing.Size(292, 27);
+            this.txtMatKhau2.Size = new System.Drawing.Size(292, 31);
             this.txtMatKhau2.TabIndex = 15;
             // 
             // txtMatKhau1
             // 
             this.txtMatKhau1.Location = new System.Drawing.Point(614, 146);
             this.txtMatKhau1.Name = "txtMatKhau1";
-            this.txtMatKhau1.Size = new System.Drawing.Size(292, 27);
+            this.txtMatKhau1.Size = new System.Drawing.Size(292, 31);
             this.txtMatKhau1.TabIndex = 20;
             // 
             // label3
@@ -67,7 +67,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(375, 197);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 19);
+            this.label3.Size = new System.Drawing.Size(205, 23);
             this.label3.TabIndex = 6;
             this.label3.Text = "Xác nhận mật khẩu mới";
             // 
@@ -76,7 +76,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(375, 146);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 19);
+            this.label2.Size = new System.Drawing.Size(126, 23);
             this.label2.TabIndex = 13;
             this.label2.Text = "Mật khẩu mới";
             // 
@@ -85,7 +85,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(375, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 19);
+            this.label1.Size = new System.Drawing.Size(154, 23);
             this.label1.TabIndex = 13;
             this.label1.Text = "Mật khẩu hiện tại";
             // 
@@ -93,13 +93,14 @@
             // 
             this.txtMatKhauHienTai.Location = new System.Drawing.Point(614, 86);
             this.txtMatKhauHienTai.Name = "txtMatKhauHienTai";
-            this.txtMatKhauHienTai.Size = new System.Drawing.Size(292, 27);
+            this.txtMatKhauHienTai.Size = new System.Drawing.Size(292, 31);
             this.txtMatKhauHienTai.TabIndex = 20;
             // 
             // uctDoiMatKhau
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.Controls.Add(this.btnXacNhan);
             this.Controls.Add(this.txtMatKhau2);
             this.Controls.Add(this.txtMatKhauHienTai);

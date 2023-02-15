@@ -75,7 +75,7 @@ namespace QuanLyBanHang.Models
                 openConnection(conn);
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = strQuery;
-                //cmd.CommandType = cmdType;
+                cmd.CommandType = cmdType;
                 cmd.Connection = conn;
                 
                 SqlParameter sqlpara = new SqlParameter();
