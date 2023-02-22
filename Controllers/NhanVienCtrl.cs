@@ -41,34 +41,14 @@ namespace QuanLyBanHang.Controllers
             catch { return 0; }
         }
 
-        #region Methods to support Search Button
-        public static DataSet FillDataSet_SearchNhanVienByIdNhanVien(string _idNhanVien)
+        public static DataSet FillDataSet_SearchNhanVien(string _IdNhanVien, int _idKho, string _HoTenNV, string _GioiTinhNV, DateTime _NgaySinhNV, string _DienThoaiNV, string _EmailNV, string _DiaChiNV)
         {
             try
             {
-                Models.NhanVienModel _nhanVien = new Models.NhanVienModel(_idNhanVien);
-                return _nhanVien.FillDataSet_SearchNhanVienByIdNhanVien();
+                Models.NhanVienModel _nhanvien = new Models.NhanVienModel(_IdNhanVien, _idKho, _HoTenNV, _GioiTinhNV, _NgaySinhNV, _DienThoaiNV, _EmailNV, _DiaChiNV);
+                return _nhanvien.FillDataSet_SearchNhanVien();
             }
             catch { return null; }
         }
-        public static DataSet FillDataSet_SearchNhanVienByHoTenNhanVien(string _hoTen)
-        {
-            try
-            {
-                Models.NhanVienModel _nhanVien = new Models.NhanVienModel(_hoTen);
-                return _nhanVien.FillDataSet_SearchNhanVienByHoTenNhanVien();
-            }
-            catch { return null; }
-        }
-        public static DataSet FillDataSet_SearchNhanVienByIdKho(int _idKho)
-        {
-            try
-            {
-                Models.NhanVienModel _nhanVien = new Models.NhanVienModel(_idKho);
-                return _nhanVien.FillDataSet_SearchNhanVienByIdKho();
-            }
-            catch { return null; }
-        }
-        #endregion
     }
 }

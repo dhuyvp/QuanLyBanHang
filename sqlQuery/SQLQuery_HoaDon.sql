@@ -63,15 +63,19 @@ where HoaDonChiTiet.MaHoaDon = ''
 GO
 */
 
+
 create procedure spGetDSHangHoaTheoHoaDon
-	@MaHoaDon nvarchar(100)
+	@MaHoaDon nvarchar(100),
+	@id_KhachHang nvarchar(100) 
 as
 begin
 	select HoaDonChiTiet.MaHoaDon, HangHoa.id_HangHoa, HangHoa.id_KhoQuanLy, HangHoa.MaHangHoa, HangHoa.TenHangHoa, HangHoa.GiaTien, HangHoa.NgaySanXuat, HangHoa.HanSD
-	from HangHoa
+	from (HangHoa
 	inner join HoaDonChiTiet 
-	on HangHoa.id_HangHoa = HoaDonChiTiet.id_HangHoa
-	where HoaDonChiTiet.MaHoaDon = @MaHoaDon;
+	on HangHoa.id_HangHoa = HoaDonChiTiet.id_HangHoa)
+	inner join HoaDon 
+	on HoaDonChiTiet.MaHoaDon = HoaDon.MaHoaDon
+	where HoaDonChiTiet.MaHoaDon like @MaHoaDon and HoaDon.id_KhachHang = @id_KhachHang;
 end
 GO
 

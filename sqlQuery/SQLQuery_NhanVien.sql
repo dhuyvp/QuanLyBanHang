@@ -23,7 +23,9 @@ as
 begin
 	delete from NhanVien where id_NhanVien=@id_NhanVien;
 
-	exec spSoNVTrongKhoHang @id_Kho=@id_KhoQuanLy, @val = -1;
+	update KhoHang set
+		soNhanVien = (select count(*) from NhanVien where id_KhoQuanLy = @id_KhoQuanLy)
+	where id_KhoQuanLy = @id_KhoQuanLy;
 end
 GO
 
@@ -42,7 +44,9 @@ begin
 	insert into NhanVien(id_NhanVien, id_KhoQuanLy, HoTen, GioiTinh, NgaySinh, DienThoai, Email, DiaChi)
 	values(@id_NhanVien, @id_KhoQuanLy, @HoTen, @GioiTinh, @NgaySinh, @DienThoai, @Email, @DiaChi);
 
-	exec spSoNVTrongKhoHang @id_Kho=@id_KhoQuanLy, @val = 1;
+	update KhoHang set
+		soNhanVien = (select count(*) from NhanVien where id_KhoQuanLy = @id_KhoQuanLy)
+	where id_KhoQuanLy = @id_KhoQuanLy;
 end
 GO
 
@@ -58,6 +62,8 @@ create procedure spUpdateNhanVien
 	@DiaChi nvarchar(100)
 as
 begin
+	declare @cur_Kho int = (select id_KhoQuanLy from NhanVien where id_NhanVien = @id_NhanVien);
+
 	update NhanVien set 
 		id_NhanVien = @id_NhanVien, 
 		id_KhoQuanLy = @id_KhoQuanLy, 
@@ -67,6 +73,13 @@ begin
 		DienThoai = @DienThoai, 
 		Email = @Email, 
 		DiaChi = @DiaChi
-	where id_NhanVien = @id_NhanVien
+	where id_NhanVien = @id_NhanVien;
+
+	update KhoHang set
+		soNhanVien = (select count(*) from NhanVien where id_KhoQuanLy = @cur_Kho)
+	where id_KhoQuanLy = @cur_Kho;
+	update KhoHang set
+		soNhanVien = (select count(*) from NhanVien where id_KhoQuanLy = @id_KhoQuanLy)
+	where id_KhoQuanLy = @id_KhoQuanLy;
 end
 GO

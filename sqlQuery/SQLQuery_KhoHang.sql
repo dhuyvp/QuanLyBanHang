@@ -10,10 +10,6 @@ drop proc spUpdateKhoHang
 GO
 drop proc spDeleteKhoHangByID
 GO
-drop proc spSoNVTrongKhoHang
-GO
-drop proc spSoHangHoaTrongKhoHang
-GO
 
 /* Sua hang hoa */
 create procedure spUpdateTaiChinhKhoHang
@@ -86,27 +82,5 @@ begin
 	update KhoHang set
 		HoatDong = 0
 	where id_KhoQuanLy = @id_KhoQuanLy;
-end
-GO
-
-create procedure spSoNVTrongKhoHang
-	@id_Kho int,
-	@val int
-as
-begin
-	update KhoHang set
-		soNhanVien = soNhanVien + @val
-	where id_KhoQuanLy = @id_Kho
-end
-GO
-
-create procedure spSoHangHoaTrongKhoHang
-	@id_Kho int,
-	@val int
-as
-begin
-	update KhoHang set
-		soHangHoa = soHangHoa + @val
-	where id_KhoQuanLy = @id_Kho
 end
 GO

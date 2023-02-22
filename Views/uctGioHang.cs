@@ -67,7 +67,7 @@ namespace QuanLyBanHang.Views
                     int giaTien = int.Parse(dt.Rows[0][1].ToString());
                     UpdateTaiChinhKhoHang(idKhoHang, giaTien);
 
-                    int _ = Models.connection.Excute_sql("exec spSoHangHoaTrongKhoHang @id_Kho=" + idKhoHang.ToString() + ", @val = -1");
+                    int _ = Models.connection.Excute_sql("update KhoHang set soHangHoa = (select count(*) from HangHoa where id_KhoQuanLy ='" + idKhoHang.ToString() + "' and is_Ban = 0) where id_KhoQuanLy = '" + idKhoHang.ToString() + "'");
                 }
             }
             
@@ -115,6 +115,8 @@ namespace QuanLyBanHang.Views
                 InsertHoaDon();
                 uctGioHang_Load(sender, e);
                 Views.uctThongKeKhachHang._uctThongKe.uctThongKeKhachHang_Load(sender, e);
+                Views.uctXemHoaDon._uctHoaDon.uctXemHoaDon_Load(sender, e);
+                Views.uctQuanLyKho._uctQLyKho.uctQuanLyKho_Load(sender, e);
             } else
             {
                 return;

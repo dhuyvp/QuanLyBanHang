@@ -54,6 +54,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grQLNhanVien = new System.Windows.Forms.GroupBox();
             this.cmbIDKho = new System.Windows.Forms.ComboBox();
+            this.btnFind = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNhanVien)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grQLNhanVien.SuspendLayout();
@@ -64,7 +65,7 @@
             this.dtpNgaySinh.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.dtpNgaySinh.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.dtpNgaySinh.CausesValidation = false;
-            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaySinh.CustomFormat = "MM/dd/yyyy";
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(116, 112);
             this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -85,6 +86,7 @@
             this.cmbGioiTinh.Name = "cmbGioiTinh";
             this.cmbGioiTinh.Size = new System.Drawing.Size(104, 27);
             this.cmbGioiTinh.TabIndex = 17;
+            this.cmbGioiTinh.SelectedValueChanged += new System.EventHandler(this.cmbGioiTinh_SelectedValueChanged);
             // 
             // label7
             // 
@@ -111,6 +113,7 @@
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(175, 27);
             this.txtDiaChi.TabIndex = 12;
+            this.txtDiaChi.TextChanged += new System.EventHandler(this.txtDiaChi_TextChanged);
             // 
             // label9
             // 
@@ -128,6 +131,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(175, 27);
             this.txtEmail.TabIndex = 10;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // label10
             // 
@@ -145,6 +149,7 @@
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(175, 27);
             this.txtDienThoai.TabIndex = 8;
+            this.txtDienThoai.TextChanged += new System.EventHandler(this.txtDienThoai_TextChanged);
             // 
             // label6
             // 
@@ -180,6 +185,7 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(200, 27);
             this.txtHoTen.TabIndex = 2;
+            this.txtHoTen.TextChanged += new System.EventHandler(this.txtHoTen_TextChanged);
             // 
             // label3
             // 
@@ -197,6 +203,7 @@
             this.txtIdNhanVien.Name = "txtIdNhanVien";
             this.txtIdNhanVien.Size = new System.Drawing.Size(200, 27);
             this.txtIdNhanVien.TabIndex = 0;
+            this.txtIdNhanVien.TextChanged += new System.EventHandler(this.txtIdNhanVien_TextChanged);
             // 
             // dgvDSNhanVien
             // 
@@ -214,7 +221,7 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(854, 211);
+            this.btnHuy.Location = new System.Drawing.Point(794, 220);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(93, 29);
@@ -225,7 +232,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(724, 211);
+            this.btnLuu.Location = new System.Drawing.Point(659, 220);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(93, 29);
@@ -236,7 +243,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(592, 211);
+            this.btnXoa.Location = new System.Drawing.Point(527, 220);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(93, 29);
@@ -247,7 +254,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(468, 211);
+            this.btnSua.Location = new System.Drawing.Point(403, 220);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(93, 29);
@@ -258,7 +265,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(350, 211);
+            this.btnThem.Location = new System.Drawing.Point(285, 220);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(93, 29);
@@ -331,11 +338,24 @@
             this.cmbIDKho.Name = "cmbIDKho";
             this.cmbIDKho.Size = new System.Drawing.Size(152, 27);
             this.cmbIDKho.TabIndex = 19;
+            this.cmbIDKho.SelectedValueChanged += new System.EventHandler(this.cmbIDKho_SelectedValueChanged);
+            // 
+            // btnFind
+            // 
+            this.btnFind.Location = new System.Drawing.Point(932, 220);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(126, 29);
+            this.btnFind.TabIndex = 29;
+            this.btnFind.Text = "Tìm kiếm";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // uctQuanLyNhanVien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::QuanLyBanHang.Properties.Resources.admin_background;
+            this.Controls.Add(this.btnFind);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnXoa);
@@ -386,5 +406,6 @@
         private System.Windows.Forms.GroupBox grQLNhanVien;
         private System.Windows.Forms.ComboBox cmbIDKho;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
+        private System.Windows.Forms.Button btnFind;
     }
 }

@@ -56,6 +56,7 @@
             this.dgvThongKeKhachHang.RowTemplate.Height = 24;
             this.dgvThongKeKhachHang.Size = new System.Drawing.Size(1167, 414);
             this.dgvThongKeKhachHang.TabIndex = 0;
+            this.dgvThongKeKhachHang.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvThongKeKhachHang_RowPrePaint);
             // 
             // label1
             // 

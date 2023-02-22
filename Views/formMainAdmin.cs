@@ -70,13 +70,33 @@ namespace QuanLyBanHang.Views
             DongAllTab();
         }
 
-        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        /*private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }*/
+
+        private void QLKhoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ThemTabPages(Views.uctQuanLyKho._uctQLyKho, 4, "Quản lý kho");
+        }
+
+        /*private void tìmKiếmThôngTinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(Views.uctSearchInforNV._uctSearchInfor, 4, "Tìm kiếm thông tin");
+        }*/
+
+        private void ThongKeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(Views.uctThongKeKhachHang._uctThongKe, 4, "Thống kê khách hàng");
+        }
+
+        private void thoátToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
                 this.Hide();
-                formStart _fr = new formStart();
+                formLogin _fr = new formLogin();
                 _fr.Show();
                 _fr.FormClosing += delegate { this.Close(); };
             }
@@ -84,16 +104,6 @@ namespace QuanLyBanHang.Views
             {
                 return;
             }
-        }
-
-        private void thoátToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            ThemTabPages(Views.uctQuanLyKho._uctQLyKho, 4, "Quản lý kho");
-        }
-
-        private void tìmKiếmThôngTinToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ThemTabPages(Views.uctSearchInforNV._uctSearchInfor, 4, "Tìm kiếm thông tin");
         }
     }
 }

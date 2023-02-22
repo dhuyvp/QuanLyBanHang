@@ -137,35 +137,35 @@
             this.txtMatKhau1.Location = new System.Drawing.Point(700, 155);
             this.txtMatKhau1.Name = "txtMatKhau1";
             this.txtMatKhau1.Size = new System.Drawing.Size(292, 31);
-            this.txtMatKhau1.TabIndex = 1;
+            this.txtMatKhau1.TabIndex = 2;
             // 
             // txtMatKhau2
             // 
             this.txtMatKhau2.Location = new System.Drawing.Point(700, 206);
             this.txtMatKhau2.Name = "txtMatKhau2";
             this.txtMatKhau2.Size = new System.Drawing.Size(292, 31);
-            this.txtMatKhau2.TabIndex = 1;
+            this.txtMatKhau2.TabIndex = 3;
             // 
             // txtHoTen
             // 
             this.txtHoTen.Location = new System.Drawing.Point(700, 251);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(292, 31);
-            this.txtHoTen.TabIndex = 1;
+            this.txtHoTen.TabIndex = 4;
             // 
             // txtDienThoai
             // 
             this.txtDienThoai.Location = new System.Drawing.Point(700, 407);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(292, 31);
-            this.txtDienThoai.TabIndex = 1;
+            this.txtDienThoai.TabIndex = 7;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(701, 454);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(292, 31);
-            this.txtEmail.TabIndex = 1;
+            this.txtEmail.TabIndex = 8;
             // 
             // label9
             // 
@@ -181,7 +181,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(700, 500);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(292, 31);
-            this.txtDiaChi.TabIndex = 1;
+            this.txtDiaChi.TabIndex = 9;
             // 
             // cmbGioiTinh
             // 
@@ -189,7 +189,7 @@
             this.cmbGioiTinh.Location = new System.Drawing.Point(701, 300);
             this.cmbGioiTinh.Name = "cmbGioiTinh";
             this.cmbGioiTinh.Size = new System.Drawing.Size(121, 30);
-            this.cmbGioiTinh.TabIndex = 2;
+            this.cmbGioiTinh.TabIndex = 5;
             // 
             // dtpNgaySinh
             // 
@@ -198,7 +198,7 @@
             this.dtpNgaySinh.Location = new System.Drawing.Point(700, 353);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(200, 31);
-            this.dtpNgaySinh.TabIndex = 3;
+            this.dtpNgaySinh.TabIndex = 6;
             // 
             // btnDangKy
             // 
@@ -206,17 +206,17 @@
             this.btnDangKy.Location = new System.Drawing.Point(677, 560);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(113, 44);
-            this.btnDangKy.TabIndex = 4;
+            this.btnDangKy.TabIndex = 10;
             this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.UseVisualStyleBackColor = false;
             this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(918, 567);
+            this.btnThoat.Location = new System.Drawing.Point(891, 560);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 30);
-            this.btnThoat.TabIndex = 5;
+            this.btnThoat.Size = new System.Drawing.Size(102, 44);
+            this.btnThoat.TabIndex = 11;
             this.btnThoat.Text = "Trở về";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);

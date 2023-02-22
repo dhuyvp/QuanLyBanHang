@@ -116,15 +116,15 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(487, 32);
+            this.label10.Location = new System.Drawing.Point(442, 29);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 23);
+            this.label10.Size = new System.Drawing.Size(146, 23);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Quỹ tiền:";
+            this.label10.Text = "Quỹ tiền(VNĐ):";
             // 
             // txtTaiChinh
             // 
-            this.txtTaiChinh.Location = new System.Drawing.Point(578, 29);
+            this.txtTaiChinh.Location = new System.Drawing.Point(578, 26);
             this.txtTaiChinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTaiChinh.Name = "txtTaiChinh";
             this.txtTaiChinh.Size = new System.Drawing.Size(200, 31);

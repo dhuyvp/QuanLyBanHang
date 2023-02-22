@@ -22,10 +22,6 @@ D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.csproj.GenerateResour
 D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.csproj.CoreCompileInputs.cache
 D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.exe
 D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.pdb
-D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.formLoginKhachHang.resources
-D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.formStart.resources
-D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.formLoginAdmin.resources
-D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.formLoginNV.resources
 D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.formDangKyKhachHang.resources
 D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.formMainKhachHang.resources
 D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.uctMuaHang.resources
@@ -45,7 +41,6 @@ D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\bin\Debug\QuanLyBanHang.
 D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\bin\Debug\QuanLyBanHang.pdb
 D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.csproj.AssemblyReference.cache
 D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.Views.formDangKyKhachHang.resources
-D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.Views.formLoginKhachHang.resources
 D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.Views.formMainAdmin.resources
 D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.Views.formMainNhanVien.resources
 D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.Views.formMainKhachHang.resources
@@ -53,7 +48,6 @@ D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.
 D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.formStart.resources
 D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.Properties.Resources.resources
 D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.Views.formLoginAdmin.resources
-D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.Views.formLoginNV.resources
 D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.Views.uctDoiMatKhau.resources
 D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.Views.uctGioHang.resources
 D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.Views.uctMuaHang.resources
@@ -97,3 +91,30 @@ D:\2022.1\OOP\OOP_CK\TEST\obj\Debug\QuanLyBanHang.csproj.GenerateResource.cache
 D:\2022.1\OOP\OOP_CK\TEST\obj\Debug\QuanLyBanHang.csproj.CoreCompileInputs.cache
 D:\2022.1\OOP\OOP_CK\TEST\obj\Debug\QuanLyBanHang.exe
 D:\2022.1\OOP\OOP_CK\TEST\obj\Debug\QuanLyBanHang.pdb
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.Views.formLogin.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_Final\obj\Debug\QuanLyBanHang.Views.formTimKiem.resources
+D:\2022.1\OOP\OOP_CK\QuanLyBanHang\obj\Debug\QuanLyBanHang.Views.formLogin.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\bin\Debug\QuanLyBanHang.exe.config
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\bin\Debug\QuanLyBanHang.exe
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\bin\Debug\QuanLyBanHang.pdb
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.csproj.AssemblyReference.cache
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Views.formDangKyKhachHang.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Views.formLogin.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Views.formMainAdmin.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Views.formMainNhanVien.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Views.formMainKhachHang.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Views.formQuenMatKhau.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Properties.Resources.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Views.uctDoiMatKhau.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Views.uctGioHang.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Views.uctMuaHang.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Views.uctQuanLyKho.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Views.uctQuanLyHangHoa.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Views.uctQuanLyNhanVien.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Views.uctThayDoiThongTin.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Views.uctThongKeKhachHang.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.Views.uctXemHoaDon.resources
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.csproj.GenerateResource.cache
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.csproj.CoreCompileInputs.cache
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.exe
+D:\OOP\Bài tập cuối kỳ (8đ)\QuanLyBanHang_CuoiKy\obj\Debug\QuanLyBanHang.pdb

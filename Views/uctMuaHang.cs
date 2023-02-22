@@ -99,5 +99,14 @@ namespace QuanLyBanHang.Views
             }
             
         }
+
+        private void cmbIDKho_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cmbIDKho.Text != "")
+            {
+                Models.LoginModel.IDKhoQuanLy = int.Parse(cmbIDKho.Text);
+                HienThiDSHangHoa();
+            }
+        }
     }
 }

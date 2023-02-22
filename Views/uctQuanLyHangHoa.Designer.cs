@@ -61,7 +61,7 @@
             // 
             this.dtpNgaySanXuat.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.dtpNgaySanXuat.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dtpNgaySanXuat.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaySanXuat.CustomFormat = "MM/dd/yyyy";
             this.dtpNgaySanXuat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySanXuat.Location = new System.Drawing.Point(615, 57);
             this.dtpNgaySanXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -92,7 +92,7 @@
             // 
             this.dtpHanSD.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.dtpHanSD.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dtpHanSD.CustomFormat = "dd/MM/yyyy";
+            this.dtpHanSD.CustomFormat = "MM/dd/yyyy";
             this.dtpHanSD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpHanSD.Location = new System.Drawing.Point(615, 87);
             this.dtpHanSD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -242,9 +242,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(493, 32);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 23);
+            this.label7.Size = new System.Drawing.Size(140, 23);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Giá tiền";
+            this.label7.Text = "Giá tiền (VNĐ)";
             // 
             // txtGiaTien
             // 

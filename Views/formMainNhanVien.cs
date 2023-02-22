@@ -57,7 +57,7 @@ namespace QuanLyBanHang.Views
 
         private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ThemTabPages(Views.uctQuanLyHangHoa._uctQLyHangHoa, 4, "Quản lý kho hàng");
+            ThemTabPages(Views.uctQuanLyHangHoa._uctQLyHangHoa, 4, "Quản lý hàng hóa");
             Views.uctQuanLyHangHoa._uctQLyHangHoa.uctQuanHangHoa_Load(sender, e);
         }
 
@@ -77,7 +77,7 @@ namespace QuanLyBanHang.Views
             if (dr == DialogResult.Yes)
             {
                 this.Hide();
-                formStart _fr = new formStart();
+                formLogin _fr = new formLogin();
                 _fr.Show();
                 _fr.FormClosing += delegate { this.Close(); };
             }

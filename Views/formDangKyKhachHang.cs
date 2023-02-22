@@ -68,7 +68,7 @@ namespace QuanLyBanHang.Views
                 {
                     MessageBox.Show("Đăng ký tài khoản thành công!");
                     this.Hide();
-                    formLoginKhachHang _frLoginKhachHang = new formLoginKhachHang();
+                    formLogin _frLoginKhachHang = new formLogin();
                     _frLoginKhachHang.Show();
                     _frLoginKhachHang.FormClosing += delegate { this.Close(); };
                 } else
@@ -81,7 +81,7 @@ namespace QuanLyBanHang.Views
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formLoginKhachHang _fr = new formLoginKhachHang();
+            formLogin _fr = new formLogin();
             _fr.Show();
             _fr.FormClosing += delegate { this.Close(); };
         }

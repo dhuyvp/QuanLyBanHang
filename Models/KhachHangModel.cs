@@ -65,7 +65,7 @@ namespace QuanLyBanHang.Models
         {
             int i = 0;
             string[] pars = new string[] { "@tk_Username", "@tk_Password", "@is_Admin", "@is_NhanVien", "@is_KhachHang", "@id_KhoQuanLy" };
-            object[] values = new object[] { Views.formLoginKhachHang.IDKhachHang, matKhau, 0, 0, 1, 0 };
+            object[] values = new object[] { Views.formLogin.IDKhachHang, matKhau, 0, 0, 1, 0 };
             i = Models.connection.Excute_sql("spUpdateTaiKhoan", CommandType.StoredProcedure, pars, values);
             return i;
         }

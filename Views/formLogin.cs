@@ -10,15 +10,32 @@ using System.Windows.Forms;
 
 namespace QuanLyBanHang.Views
 {
-    public partial class formLoginKhachHang : Form
+    public partial class formLogin : Form
     {
-        public formLoginKhachHang()
+        public formLogin()
         {
             InitializeComponent();
         }
         public static string IDKhachHang;
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
+            if (Models.LoginModel.KiemTraDangNhapAdmin(txtTenDangNhap.Text, txtMatKhau.Text))
+            {
+                this.Hide();
+                formMainAdmin _fr = new formMainAdmin();
+                _fr.Show();
+                _fr.FormClosing += delegate { this.Close(); };
+                return;
+            }
+            if (Models.LoginModel.KiemTraDangNhapNhanVien(txtTenDangNhap.Text, txtMatKhau.Text) > 0)
+            {
+                Models.LoginModel.IDKhoQuanLy = Models.LoginModel.KiemTraDangNhapNhanVien(txtTenDangNhap.Text, txtMatKhau.Text);
+                this.Hide();
+                formMainNhanVien _fr = new formMainNhanVien();
+                _fr.Show();
+                _fr.FormClosing += delegate { this.Close(); };
+                return;
+            }
             if (Models.LoginModel.KiemTraDangNhapKhachHang(txtTenDangNhap.Text, txtMatKhau.Text))
             {
                 IDKhachHang = txtTenDangNhap.Text;
@@ -51,10 +68,15 @@ namespace QuanLyBanHang.Views
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            formStart _fr = new formStart();
-            _fr.Show();
-            _fr.FormClosing += delegate { this.Close(); };
+            this.Close();
+        }
+
+        private void btnDangNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnDangNhap.PerformClick();
+            }
         }
     }
 }

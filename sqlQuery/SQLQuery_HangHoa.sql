@@ -43,7 +43,9 @@ begin
 	insert into HangHoa(id_HangHoa, id_KhoQuanLy, MaHangHoa, TenHangHoa, GiaTien, NgaySanXuat, HanSD, is_Ban)
 	values(@id_HangHoa, @id_KhoQuanLy, @MaHangHoa, @TenHangHoa, @GiaTien, @NgaySanXuat, @HanSD, @is_Ban);
 
-	exec spSoHangHoaTrongKhoHang @id_Kho=@id_KhoQuanLy, @val = 1;
+	update KhoHang set
+		soHangHoa = (select count(*) from HangHoa where id_KhoQuanLy = @id_KhoQuanLy and is_Ban = 0)
+	where id_KhoQuanLy = @id_KhoQuanLy;
 end
 GO
 
@@ -69,6 +71,9 @@ begin
 		is_Ban = @is_Ban
 	where id_HangHoa = @id_HangHoa
 	
+	update KhoHang set
+		soHangHoa = (select count(*) from HangHoa where id_KhoQuanLy = @id_KhoQuanLy and is_Ban = 0)
+	where id_KhoQuanLy = @id_KhoQuanLy;
 end
 GO
 
@@ -82,8 +87,10 @@ begin
 		is_Ban = 1
 	where id_HangHoa = @id_HangHoa;
 
-	exec spSoHangHoaTrongKhoHang @id_Kho=@id_KhoQuanLy, @val = -1;
-	
+	update KhoHang set
+		soHangHoa = (select count(*) from HangHoa where id_KhoQuanLy = @id_KhoQuanLy and is_Ban = 0)
+	where id_KhoQuanLy = @id_KhoQuanLy;
+
 end
 GO
 

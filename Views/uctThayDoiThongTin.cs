@@ -27,7 +27,7 @@ namespace QuanLyBanHang.Views
             cmbGioiTinh.Items.Add("Nữ");
             cmbGioiTinh.Items.Add("Khác");
 
-            DataTable dt = Models.connection.FillDataSet("select HoTen, GioiTinh, NgaySinh, DienThoai, Email, DiaChi from KhachHang where id_KhachHang ='" + Views.formLoginKhachHang.IDKhachHang + "'", CommandType.Text).Tables[0];
+            DataTable dt = Models.connection.FillDataSet("select HoTen, GioiTinh, NgaySinh, DienThoai, Email, DiaChi from KhachHang where id_KhachHang ='" + Views.formLogin.IDKhachHang + "'", CommandType.Text).Tables[0];
             txtHoTen.Text = dt.Rows[0][0].ToString();
             cmbGioiTinh.Text = dt.Rows[0][1].ToString();
             dtpNgaySinh.Value = DateTime.Parse(dt.Rows[0][2].ToString());
@@ -39,12 +39,12 @@ namespace QuanLyBanHang.Views
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             string matKhau = "";
-            DataTable dt = Models.connection.FillDataSet("select tk_Password from TaiKhoan where tk_Username = '" + Views.formLoginKhachHang.IDKhachHang + "'", CommandType.Text).Tables[0];
+            DataTable dt = Models.connection.FillDataSet("select tk_Password from TaiKhoan where tk_Username = '" + Views.formLogin.IDKhachHang + "'", CommandType.Text).Tables[0];
             if (dt.Rows.Count > 0)
             {
                 matKhau = dt.Rows[0][0].ToString();
             }
-            int i = Controllers.KhachHangCtrl.UpdateKhachHang(Views.formLoginKhachHang.IDKhachHang, matKhau, txtHoTen.Text, cmbGioiTinh.Text, dtpNgaySinh.Value, txtDienThoai.Text, txtEmail.Text, txtDiaChi.Text);
+            int i = Controllers.KhachHangCtrl.UpdateKhachHang(Views.formLogin.IDKhachHang, matKhau, txtHoTen.Text, cmbGioiTinh.Text, dtpNgaySinh.Value, txtDienThoai.Text, txtEmail.Text, txtDiaChi.Text);
             if (i > 0)
             {
                 MessageBox.Show("Thay đổi thông tin thành công!");

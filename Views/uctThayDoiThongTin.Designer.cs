@@ -49,19 +49,19 @@
             this.btnXacNhan.Location = new System.Drawing.Point(590, 419);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(113, 44);
-            this.btnXacNhan.TabIndex = 36;
+            this.btnXacNhan.TabIndex = 7;
             this.btnXacNhan.Text = "Xác nhận";
             this.btnXacNhan.UseVisualStyleBackColor = false;
             this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // dtpNgaySinh
             // 
-            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaySinh.CustomFormat = "MM/dd/yyyy";
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(613, 212);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(200, 31);
-            this.dtpNgaySinh.TabIndex = 35;
+            this.dtpNgaySinh.TabIndex = 3;
             // 
             // cmbGioiTinh
             // 
@@ -69,35 +69,35 @@
             this.cmbGioiTinh.Location = new System.Drawing.Point(614, 159);
             this.cmbGioiTinh.Name = "cmbGioiTinh";
             this.cmbGioiTinh.Size = new System.Drawing.Size(121, 30);
-            this.cmbGioiTinh.TabIndex = 34;
+            this.cmbGioiTinh.TabIndex = 2;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(613, 359);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(292, 31);
-            this.txtDiaChi.TabIndex = 33;
+            this.txtDiaChi.TabIndex = 6;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(614, 313);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(292, 31);
-            this.txtEmail.TabIndex = 32;
+            this.txtEmail.TabIndex = 5;
             // 
             // txtDienThoai
             // 
             this.txtDienThoai.Location = new System.Drawing.Point(613, 266);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(292, 31);
-            this.txtDienThoai.TabIndex = 31;
+            this.txtDienThoai.TabIndex = 4;
             // 
             // txtHoTen
             // 
             this.txtHoTen.Location = new System.Drawing.Point(613, 110);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(292, 31);
-            this.txtHoTen.TabIndex = 30;
+            this.txtHoTen.TabIndex = 1;
             // 
             // label9
             // 

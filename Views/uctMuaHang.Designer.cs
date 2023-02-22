@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbIDKho = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnOK = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSachHangDeMua = new System.Windows.Forms.DataGridView();
@@ -46,7 +45,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(121, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(387, 23);
+            this.label1.Size = new System.Drawing.Size(313, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Vui lòng chọn kho để xem thông tin hàng hóa";
             // 
@@ -55,28 +54,18 @@
             this.cmbIDKho.FormattingEnabled = true;
             this.cmbIDKho.Location = new System.Drawing.Point(464, 13);
             this.cmbIDKho.Name = "cmbIDKho";
-            this.cmbIDKho.Size = new System.Drawing.Size(121, 30);
+            this.cmbIDKho.Size = new System.Drawing.Size(121, 27);
             this.cmbIDKho.TabIndex = 2;
+            this.cmbIDKho.SelectedValueChanged += new System.EventHandler(this.cmbIDKho_SelectedValueChanged);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cmbIDKho);
-            this.panel1.Location = new System.Drawing.Point(139, 40);
+            this.panel1.Location = new System.Drawing.Point(225, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1004, 54);
+            this.panel1.Size = new System.Drawing.Size(800, 54);
             this.panel1.TabIndex = 3;
-            // 
-            // btnOK
-            // 
-            this.btnOK.Location = new System.Drawing.Point(623, 8);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 35);
-            this.btnOK.TabIndex = 3;
-            this.btnOK.Text = "Xem";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // label2
             // 
@@ -84,7 +73,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(521, 131);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(344, 32);
+            this.label2.Size = new System.Drawing.Size(285, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "DANH SÁCH HÀNG HÓA";
             // 
@@ -102,11 +91,11 @@
             this.dgvDanhSachHangDeMua.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachHangDeMua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachHangDeMua.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSachHangDeMua.Location = new System.Drawing.Point(3, 27);
+            this.dgvDanhSachHangDeMua.Location = new System.Drawing.Point(3, 23);
             this.dgvDanhSachHangDeMua.Name = "dgvDanhSachHangDeMua";
             this.dgvDanhSachHangDeMua.RowHeadersWidth = 51;
             this.dgvDanhSachHangDeMua.RowTemplate.Height = 24;
-            this.dgvDanhSachHangDeMua.Size = new System.Drawing.Size(1001, 314);
+            this.dgvDanhSachHangDeMua.Size = new System.Drawing.Size(1001, 318);
             this.dgvDanhSachHangDeMua.TabIndex = 0;
             // 
             // btnOKThem
@@ -150,7 +139,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvDanhSachHangDeMua;
-        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnOKThem;
     }
 }

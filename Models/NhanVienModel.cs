@@ -34,6 +34,10 @@ namespace QuanLyBanHang.Models
         {
             this.IDNhanVien = _s;
             this.HoTen = _s;
+            this.GioiTinh = _s;
+            this.DienThoai = _s;
+            this.Email = _s;
+            this.DiaChi = _s;
         }
         public NhanVienModel(int _idKho)
         {
@@ -107,31 +111,14 @@ namespace QuanLyBanHang.Models
             return i;
         }
 
-        // Search Nhan Vien
-        // Support search button in QuanLyNV
-        public DataSet FillDataSet_SearchNhanVienByIdNhanVien()
-        {
-            DataSet ds = new DataSet();
-            string[] paras = new string[1] { "@id_NhanVien" };
-            object[] values = new object[1] { IDNhanVien };
-            ds = Models.connection.FillDataSet("spSearchByIdNV", CommandType.StoredProcedure, paras, values);
-            return ds;
-        }
 
-        public DataSet FillDataSet_SearchNhanVienByHoTenNhanVien()
+        public DataSet FillDataSet_SearchNhanVien()
         {
             DataSet ds = new DataSet();
-            string[] paras = new string[1] { "@HoTen" };
-            object[] values = new object[1] { HoTen };
-            ds = Models.connection.FillDataSet("spSearchNVByTenNV", CommandType.StoredProcedure, paras, values);
-            return ds;
-        }
-        public DataSet FillDataSet_SearchNhanVienByIdKho()
-        {
-            DataSet ds = new DataSet();
-            string[] paras = new string[1] { "@id_KhoQuanLy" };
-            object[] values = new object[1] { IDKhoQuanLy };
-            ds = Models.connection.FillDataSet("spSearchNVByIdKho", CommandType.StoredProcedure, paras, values);
+            string[] paras = new string[] { "@id_NhanVien", "@HoTen", "@id_KhoQuanLy", "@NgaySinh", "@GioiTinh", "@DienThoai", "@Email", "@DiaChi" };
+            object[] values = new object[] { IDNhanVien, HoTen, IDKhoQuanLy, NgaySinh, GioiTinh, DienThoai, Email, DiaChi };
+
+            ds = Models.connection.FillDataSet("spSearchNhanVien", CommandType.StoredProcedure, paras, values);
             return ds;
         }
     }

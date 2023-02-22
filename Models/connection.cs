@@ -84,7 +84,7 @@ namespace QuanLyBanHang.Models
                     sqlpara = new SqlParameter();
                     sqlpara.ParameterName = pars[i];
                     sqlpara.SqlValue = values[i];
-                    
+
                     cmd.Parameters.Add(sqlpara);
                 }
                 SqlDataAdapter sqlda = new SqlDataAdapter(cmd);

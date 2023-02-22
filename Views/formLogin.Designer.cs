@@ -1,6 +1,6 @@
 ﻿namespace QuanLyBanHang.Views
 {
-    partial class formLoginKhachHang
+    partial class formLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -82,12 +82,13 @@
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = false;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            this.btnDangNhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnDangNhap_KeyDown);
             // 
             // btnQuenMatKhau
             // 
-            this.btnQuenMatKhau.Location = new System.Drawing.Point(454, 187);
+            this.btnQuenMatKhau.Location = new System.Drawing.Point(423, 187);
             this.btnQuenMatKhau.Name = "btnQuenMatKhau";
-            this.btnQuenMatKhau.Size = new System.Drawing.Size(148, 28);
+            this.btnQuenMatKhau.Size = new System.Drawing.Size(179, 28);
             this.btnQuenMatKhau.TabIndex = 4;
             this.btnQuenMatKhau.Text = "Quên mật khẩu?";
             this.btnQuenMatKhau.UseVisualStyleBackColor = true;
@@ -117,13 +118,13 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(267, 29);
+            this.label3.Location = new System.Drawing.Point(279, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(306, 26);
+            this.label3.Size = new System.Drawing.Size(276, 26);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Form đăng nhập khách hàng";
+            this.label3.Text = "Form đăng nhập hệ thống";
             // 
-            // formLoginKhachHang
+            // formLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::QuanLyBanHang.Properties.Resources.Customer_Login;
@@ -139,7 +140,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "formLoginKhachHang";
+            this.Name = "formLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.ResumeLayout(false);

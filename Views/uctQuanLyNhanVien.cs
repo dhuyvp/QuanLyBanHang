@@ -18,6 +18,9 @@ namespace QuanLyBanHang.Views
             InitializeComponent();
             _uctQlyNhanVien = this;
         }
+        // flag = 0 -> thêm
+        // flag = 1 -> sửa
+        // flag = 2 -> tìm kiếm
         int flag = 0;
         public void uctQuanLyNhanVien_Load(object sender, EventArgs e)
         {
@@ -93,6 +96,7 @@ namespace QuanLyBanHang.Views
             btnThem.Enabled = !e;
             btnSua.Enabled = !e;
             btnXoa.Enabled = !e;
+            btnFind.Enabled = !e;
         }
         // Load items into control  
         void loadcontrol()
@@ -105,14 +109,15 @@ namespace QuanLyBanHang.Views
         // function used to delete the data of textboxes whenever we click on the button 
         void clearData()
         {
+            loadcontrol();
+            GetAllKhoHang();
             txtIdNhanVien.Text = Models.connection.ExcuteScalar("select dbo.funGetNextIDNhanVien()");
             cmbIDKho.Text = "";
             txtHoTen.Text = "";
             txtDienThoai.Text = "";
             txtEmail.Text = "";
             txtDiaChi.Text = "";
-            cmbGioiTinh.Text = "";
-            loadcontrol();
+            cmbGioiTinh.Text = "";           
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -154,6 +159,7 @@ namespace QuanLyBanHang.Views
                 {
                     MessageBox.Show("Xóa không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                Views.uctQuanLyKho._uctQLyKho.uctQuanLyKho_Load(sender, e);
             }
             else
             {
@@ -172,7 +178,7 @@ namespace QuanLyBanHang.Views
             }
             catch { }
             DateTime _ngaySinh = dtpNgaySinh.Value.Date;
-            MessageBox.Show(_ngaySinh.ToString());
+           // MessageBox.Show(_ngaySinh.ToString());
 
 
             string _gioiTinh = cmbGioiTinh.Text;
@@ -213,13 +219,107 @@ namespace QuanLyBanHang.Views
             }
             uctQuanLyNhanVien_Load(sender, e);
             Views.uctQuanLyKho._uctQLyKho.uctQuanLyKho_Load(sender, e);
+
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            uctQuanLyNhanVien_Load(sender, e);
+            if (flag == 0 || flag == 1)
+            {
+                uctQuanLyNhanVien_Load(sender, e);
+            }
+            else
+            {
+                flag = -1;
+                Dis_Enable(false);
+                //clearData();
+                //HienThiDSNhanVien();
+                DataBinding();
+            }
         }
 
-        
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            flag = 2;
+            clearData();
+            txtIdNhanVien.Text = "";
+            Dis_Enable(true);
+            txtIdNhanVien.Enabled = true;
+            btnLuu.Enabled = false;
+            dtpNgaySinh.Enabled = false;
+        }
+
+        public void HienThiDSSearchNhanVien()
+        {
+            string _idNhanVien = txtIdNhanVien.Text;
+            int _idKho = -1;
+            bool _isNum = int.TryParse(cmbIDKho.Text, out _idKho);
+            string _hoTen = txtHoTen.Text;
+            string _gioiTinh = cmbGioiTinh.Text;
+            DateTime _ngaySinh = dtpNgaySinh.Value;
+            string _dienThoai = txtDienThoai.Text;
+            string _email = txtEmail.Text;
+            string _diaChi = txtDiaChi.Text;
+
+            string sqlQuery = "select * from NhanVien where " +
+                "id_NhanVien like '%" + _idNhanVien + "%' and " +
+                "HoTen like '%" + _hoTen + "%' and " +
+                "GioiTinh like '%" + _gioiTinh + "%' and " +
+                "DienThoai like '%" + _dienThoai + "%' and " +
+                "Email like '%" + _email + "%' and " +
+                "DiaChi like '%" + _diaChi + "%' ";
+            
+            if (_isNum && _idKho > 0) 
+            {
+                sqlQuery += " and id_KhoQuanLy = " + _idKho.ToString();
+            }
+
+            dgvDSNhanVien.DataSource = Models.connection.FillDataSet(sqlQuery, CommandType.Text).Tables[0];
+            dgvDSNhanVien.Dock = DockStyle.Fill;
+            dgvDSNhanVien.RowHeadersVisible = false;
+            dgvDSNhanVien.AllowUserToAddRows = false;
+
+            dgvDSNhanVien.Columns[0].HeaderText = "ID nhân viên";
+            dgvDSNhanVien.Columns[1].HeaderText = "Kho quản lý";
+            dgvDSNhanVien.Columns[2].HeaderText = "Họ tên";
+            dgvDSNhanVien.Columns[3].HeaderText = "Giới tính";
+            dgvDSNhanVien.Columns[4].HeaderText = "Ngày sinh";
+            dgvDSNhanVien.Columns[5].HeaderText = "Điện thoại";
+            dgvDSNhanVien.Columns[6].HeaderText = "Email";
+            dgvDSNhanVien.Columns[7].HeaderText = "Địa chỉ";
+        }
+        private void txtIdNhanVien_TextChanged(object sender, EventArgs e)
+        {
+            if (flag == 2) HienThiDSSearchNhanVien();
+        }
+        private void txtHoTen_TextChanged(object sender, EventArgs e)
+        {
+            if (flag == 2) HienThiDSSearchNhanVien();
+        }
+
+        private void cmbIDKho_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (flag == 2) HienThiDSSearchNhanVien();
+        }
+
+        private void txtDienThoai_TextChanged(object sender, EventArgs e)
+        {
+            if (flag == 2) HienThiDSSearchNhanVien();
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (flag == 2) HienThiDSSearchNhanVien();
+        }
+
+        private void txtDiaChi_TextChanged(object sender, EventArgs e)
+        {
+            if (flag == 2) HienThiDSSearchNhanVien();
+        }
+
+        private void cmbGioiTinh_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (flag == 2) HienThiDSSearchNhanVien();
+        }
     }
 }

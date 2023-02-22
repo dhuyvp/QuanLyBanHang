@@ -61,7 +61,7 @@ namespace QuanLyBanHang.Views
             if (dr == DialogResult.Yes)
             {
                 this.Hide();
-                formStart _fr = new formStart();
+                formLogin _fr = new formLogin();
                 _fr.Show();
                 _fr.FormClosing += delegate { this.Close(); };
             }

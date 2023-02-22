@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyBanHang
+namespace QuanLyBanHang.Views
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace QuanLyBanHang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formStart());
+            Application.Run(new formLogin());
             
         }
     }

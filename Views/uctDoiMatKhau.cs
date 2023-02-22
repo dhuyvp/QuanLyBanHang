@@ -22,7 +22,7 @@ namespace QuanLyBanHang.Views
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             string matKhauCu = "";
-            DataTable dt = Models.connection.FillDataSet("select tk_Password from TaiKhoan where tk_Username = '" + Views.formLoginKhachHang.IDKhachHang + "'", CommandType.Text).Tables[0];
+            DataTable dt = Models.connection.FillDataSet("select tk_Password from TaiKhoan where tk_Username = '" + Views.formLogin.IDKhachHang + "'", CommandType.Text).Tables[0];
             if (dt.Rows.Count > 0)
             {
                 matKhauCu = dt.Rows[0][0].ToString();
@@ -42,7 +42,7 @@ namespace QuanLyBanHang.Views
                     if (i > 0)
                     {
                         MessageBox.Show("Thay đổi mật khẩu thành công! Vui lòng đăng nhập lại!");
-                        formLoginKhachHang f2 = new formLoginKhachHang();
+                        formLogin f2 = new formLogin();
                         f2.Show();
                         Views.formMainKhachHang._formMainKhachHang.Hide();
                         f2.FormClosing += delegate { Views.formMainKhachHang._formMainKhachHang.Close(); };

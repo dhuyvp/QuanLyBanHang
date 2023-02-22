@@ -20,7 +20,7 @@ namespace QuanLyBanHang.Views
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formLoginKhachHang _fr = new formLoginKhachHang();
+            formLogin _fr = new formLogin();
             _fr.Show();
             _fr.FormClosing += delegate { this.Close(); };
         }
@@ -28,14 +28,22 @@ namespace QuanLyBanHang.Views
         private void btnOK_Click(object sender, EventArgs e)
         {
             string matKhau = "";
-            DataTable dt = Models.connection.FillDataSet("select tk_Password from TaiKhoan where tk_Username = '" + txtTenDangNhap.Text + "'", CommandType.Text).Tables[0];
+            DataTable dt = Models.connection.FillDataSet("select tk_Password from TaiKhoan where tk_Username = '" + txtTenDangNhap.Text + "' and  is_KhachHang = 1" , CommandType.Text).Tables[0];
             if (dt.Rows.Count > 0)
             {
                 matKhau = dt.Rows[0][0].ToString();
                 MessageBox.Show("Mật khẩu của bạn là: '" + matKhau + "'");
             } else
             {
-                MessageBox.Show("Tài khoản chưa tồn tại!");
+                dt = Models.connection.FillDataSet("select tk_Password from TaiKhoan where tk_Username = '" + txtTenDangNhap.Text + "' and  is_KhachHang = 0", CommandType.Text).Tables[0];
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Tài khoản không cho phép xem mật khẩu!");
+                }
+                else
+                {
+                    MessageBox.Show("Tài khoản chưa tồn tại!");
+                }
             }
         }
     }

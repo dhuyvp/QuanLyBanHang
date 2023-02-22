@@ -31,7 +31,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbMaHoaDon = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnOK = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSachHangTrongHoaDon = new System.Windows.Forms.DataGridView();
@@ -46,7 +45,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(527, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(344, 32);
+            this.label2.Size = new System.Drawing.Size(285, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "DANH SÁCH HÀNG HÓA";
             // 
@@ -55,35 +54,25 @@
             this.cmbMaHoaDon.FormattingEnabled = true;
             this.cmbMaHoaDon.Location = new System.Drawing.Point(501, 13);
             this.cmbMaHoaDon.Name = "cmbMaHoaDon";
-            this.cmbMaHoaDon.Size = new System.Drawing.Size(183, 30);
+            this.cmbMaHoaDon.Size = new System.Drawing.Size(183, 27);
             this.cmbMaHoaDon.TabIndex = 2;
+            this.cmbMaHoaDon.SelectedValueChanged += new System.EventHandler(this.cmbMaHoaDon_SelectedValueChanged);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cmbMaHoaDon);
-            this.panel1.Location = new System.Drawing.Point(149, 22);
+            this.panel1.Location = new System.Drawing.Point(225, 19);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1004, 54);
+            this.panel1.Size = new System.Drawing.Size(811, 54);
             this.panel1.TabIndex = 7;
-            // 
-            // btnOK
-            // 
-            this.btnOK.Location = new System.Drawing.Point(704, 8);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 35);
-            this.btnOK.TabIndex = 3;
-            this.btnOK.Text = "Xem";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(121, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(420, 23);
+            this.label1.Size = new System.Drawing.Size(338, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Vui lòng chọn mã hóa đơn mà bạn muốn kiểm tra";
             // 
@@ -101,16 +90,16 @@
             this.dgvDanhSachHangTrongHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachHangTrongHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachHangTrongHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSachHangTrongHoaDon.Location = new System.Drawing.Point(3, 27);
+            this.dgvDanhSachHangTrongHoaDon.Location = new System.Drawing.Point(3, 23);
             this.dgvDanhSachHangTrongHoaDon.Name = "dgvDanhSachHangTrongHoaDon";
             this.dgvDanhSachHangTrongHoaDon.RowHeadersWidth = 51;
             this.dgvDanhSachHangTrongHoaDon.RowTemplate.Height = 24;
-            this.dgvDanhSachHangTrongHoaDon.Size = new System.Drawing.Size(1001, 358);
+            this.dgvDanhSachHangTrongHoaDon.Size = new System.Drawing.Size(1001, 362);
             this.dgvDanhSachHangTrongHoaDon.TabIndex = 0;
             // 
             // uctXemHoaDon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QuanLyBanHang.Properties.Resources.background_customer;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -136,7 +125,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbMaHoaDon;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvDanhSachHangTrongHoaDon;

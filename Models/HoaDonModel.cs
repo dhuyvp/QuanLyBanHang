@@ -13,7 +13,7 @@ namespace QuanLyBanHang.Models
         public string MaHoaDon { get; set; }
         public string IDKhachHang 
         { 
-            get { return Views.formLoginKhachHang.IDKhachHang; } 
+            get { return Views.formLogin.IDKhachHang; } 
         }
         public DateTime ThoiGian { get; set; }
         public int GiaTien { get; set; }
@@ -59,7 +59,7 @@ namespace QuanLyBanHang.Models
         }
         public static DataSet FillDataSetDSHoaDonByIDKhachHang()
         {
-            return Models.connection.FillDataSet("exec spGetDSHoaDonTheoKhachHang @id_KhachHang= '" + Views.formLoginKhachHang.IDKhachHang +"'", CommandType.Text) ;
+            return Models.connection.FillDataSet("exec spGetDSHoaDonTheoKhachHang @id_KhachHang= '" + Views.formLogin.IDKhachHang +"'", CommandType.Text) ;
         }
     }
 }

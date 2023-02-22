@@ -19,25 +19,27 @@ namespace QuanLyBanHang.Views
         public static uctXemHoaDon _uctHoaDon = new uctXemHoaDon();
         void HienThiDSHangHoa(string maHoaDon)
         {
-            dgvDanhSachHangTrongHoaDon.DataSource = Models.connection.FillDataSet("exec spGetDSHangHoaTheoHoaDon @MaHoaDon='" + maHoaDon + "'", CommandType.Text).Tables[0];
+            string sqlQuery = "exec spGetDSHangHoaTheoHoaDon @MaHoaDon='" + maHoaDon + "', @id_KhachHang='" + Views.formLogin.IDKhachHang + "'";
+            
+            dgvDanhSachHangTrongHoaDon.DataSource = Models.connection.FillDataSet(sqlQuery, CommandType.Text).Tables[0];
             dgvDanhSachHangTrongHoaDon.Dock = DockStyle.Fill;
             dgvDanhSachHangTrongHoaDon.RowHeadersVisible = false;
             dgvDanhSachHangTrongHoaDon.AllowUserToAddRows = false;
 
-            dgvDanhSachHangTrongHoaDon.Columns[1].HeaderText = "Mã hóa đơn";
+            dgvDanhSachHangTrongHoaDon.Columns[0].HeaderText = "Mã hóa đơn";
             dgvDanhSachHangTrongHoaDon.Columns[1].HeaderText = "ID hàng hóa";
             dgvDanhSachHangTrongHoaDon.Columns[2].HeaderText = "Kho quản lý";
             dgvDanhSachHangTrongHoaDon.Columns[3].HeaderText = "Mã hàng hóa";
             dgvDanhSachHangTrongHoaDon.Columns[4].HeaderText = "Tên hàng hóa";
-            dgvDanhSachHangTrongHoaDon.Columns[4].Width = 200;
+            //dgvDanhSachHangTrongHoaDon.Columns[4].Width = 200;
             dgvDanhSachHangTrongHoaDon.Columns[5].HeaderText = "Giá tiền";
             dgvDanhSachHangTrongHoaDon.Columns[6].HeaderText = "Ngày sản xuất";
             dgvDanhSachHangTrongHoaDon.Columns[7].HeaderText = "Hạn sử dụng";
         }
-        private void uctXemHoaDon_Load(object sender, EventArgs e)
+        public void uctXemHoaDon_Load(object sender, EventArgs e)
         {
             cmbMaHoaDon.DropDownStyle = ComboBoxStyle.DropDownList;
-            HienThiDSHangHoa("");
+            HienThiDSHangHoa("%");
             GetAllHoaDon();
         }
         void GetAllHoaDon()
@@ -58,6 +60,14 @@ namespace QuanLyBanHang.Views
                 MessageBox.Show("Vui lòng lựa chọn hóa đơn muốn kiểm tra!");
             }
             else
+            {
+                HienThiDSHangHoa(cmbMaHoaDon.Text);
+            }
+        }
+
+        private void cmbMaHoaDon_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cmbMaHoaDon.Text != "")
             {
                 HienThiDSHangHoa(cmbMaHoaDon.Text);
             }
